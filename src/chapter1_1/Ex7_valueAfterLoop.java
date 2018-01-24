@@ -27,6 +27,15 @@ public class Ex7_valueAfterLoop {
         }
         StdOut.println(sum);
 
+        int sum1 = 0;
+        for(int i=1;i<1000;i*=2){
+            for (int j=0;j<1000;j++){
+                sum1++;
+            }
+        }
+        StdOut.println(sum1);
+
+
 
     }
 }
