@@ -22,6 +22,13 @@ public class Ex13_transaction implements Comparable<Ex13_transaction>{
         amount = a;
     }
 
+    Ex13_transaction(String s){
+        String[] data = s.split(" ");
+        who = data[0];
+        when = new Date(data[1]);
+        amount = Double.parseDouble(data[2]);
+    }
+
     public String who(){
         return who;
     }

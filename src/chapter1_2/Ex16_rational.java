@@ -16,6 +16,11 @@ public class Ex16_rational {
     final private long denominator;
 
     Ex16_rational(long n, long d){
+
+        assert d !=0;
+        assert n < Long.MAX_VALUE && n > Long.MIN_VALUE;
+        assert d < Long.MAX_VALUE && d > Long.MIN_VALUE;
+
         numertor = n;
         denominator = d;
     }
@@ -81,5 +86,20 @@ public class Ex16_rational {
         if (q == 0) return p;
         long r = p % q;
         return commonDivisor(q,r);
+    }
+
+    public static void main(String[] args) {
+        Ex16_rational r1 = new Ex16_rational(1,3);
+        Ex16_rational r2 = new Ex16_rational(1,2);
+
+        System.out.println(r1.plus(r2).toString());
+        System.out.println(r1.minus(r2).toString());
+        System.out.println(r1.times(r2).toString());
+        System.out.println(r1.divides(r2).toString());
+        System.out.println(r1.equals(r2));
+
+        //Ex16_rational badR = new Ex16_rational(1,0);
+//        Ex16_rational bigR = new Ex16_rational(1,Long.MAX_VALUE);
+//        System.out.println(bigR.times(bigR));
     }
 }

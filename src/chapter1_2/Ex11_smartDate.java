@@ -33,6 +33,28 @@ public class Ex11_smartDate {
         day = d;
     }
 
+    Ex11_smartDate(String s) throws InvalidDateException {
+
+        String data[] = s.split("/");
+        int m = Integer.parseInt(data[0]);
+        int d = Integer.parseInt(data[1]);
+        int y = Integer.parseInt(data[2]);
+
+        if (m > 12 || m < 1 || d > 31 || d < 1)
+            throw new InvalidDateException();
+        if (m == 4 || m == 6 || m == 9 || m == 11)
+            if (d > 30)
+                throw new InvalidDateException();
+        if (this.isLeapYear() && m == 2 && d > 29)
+            throw new InvalidDateException();
+        if (!this.isLeapYear() && m ==2 && d > 28)
+            throw new InvalidDateException();
+
+        year = y;
+        month = m;
+        day = d;
+    }
+
     public boolean isLeapYear(){
         if (this.year % 400 == 0)
             return true;
