@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: PACKAGE_NAME
@@ -14,5 +16,8 @@ public class test {
         System.err.println("error");
         System.err.println("error1");
         System.out.println("asdf");
+
+        LocalDate localDate = LocalDate.of(2009,3,32);
+        System.out.println(localDate);
     }
 }
