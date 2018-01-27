@@ -1,6 +1,7 @@
 package chapter1_1;
 
 import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,10 +11,10 @@ import java.util.Collections;
  * @Package: chapter1_1
  * @Description:
  * @Author: Jacob Zhang
- * @CreateDate: 2018/1/24/024 17:10
- * @UpdateDate: 2018/1/24/024 17:10
+ * @CreateDate: 2018/1/27/027 8:50
+ * @UpdateDate: 2018/1/27/027 8:50
  */
-public class Ex36_shuffleTest {
+public class Ex37_badShuffle {
 
     public static void main(String[] args) {
 
@@ -27,7 +28,7 @@ public class Ex36_shuffleTest {
 
         for (int i=0;i<n;i++){
             init(a);
-            shuffle(a);
+            badShuffle(a);
             for (int j=0;j<m;j++){
                 int fallIn = a[j];
                 frequencies[j][fallIn]++;
@@ -48,12 +49,12 @@ public class Ex36_shuffleTest {
             a[i] = i;
         }
     }
-    public static void shuffle(int[] a){
-        ArrayList<Integer> temp = new ArrayList<>();
-        for (int i: a)
-            temp.add(i);
-        Collections.shuffle(temp);
-        for (int i=0;i<a.length;i++)
-            a[i] = temp.get(i);
+    public static void badShuffle(int[] a){
+        for (int i=0;i<a.length;i++){
+            int pos = StdRandom.uniform(a.length);
+            int temp = a[i];
+            a[i] = a[pos];
+            a[pos] = temp;
+        }
     }
 }
