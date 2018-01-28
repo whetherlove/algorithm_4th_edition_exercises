@@ -1,5 +1,8 @@
 package chapter1_2;
 
+import chapter1_3.Ex14_resizingArrayQueueOfString;
+import edu.princeton.cs.algs4.In;
+
 import java.time.LocalDate;
 
 /**
@@ -85,6 +88,18 @@ public class Ex11_smartDate {
     private class InvalidDateException extends Throwable {
         public InvalidDateException() {
         }
+    }
+    //Exercise 1.3.16
+    public static Ex11_smartDate[] readDates(String name) throws InvalidDateException {
+        In in = new In(name);
+        Ex14_resizingArrayQueueOfString queue =new Ex14_resizingArrayQueueOfString();
+        while (!in.isEmpty())
+            queue.enQueue(in.readString());
+        int N = queue.size();
+        Ex11_smartDate[] dates = new Ex11_smartDate[N];
+        for (int i=0;i<N;i++)
+            dates[i] = new Ex11_smartDate(queue.deQueue());
+        return dates;
     }
 
     public static void main(String[] args) throws InvalidDateException {
