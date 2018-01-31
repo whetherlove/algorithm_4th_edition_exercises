@@ -13,8 +13,7 @@ import edu.princeton.cs.algs4.Stack;
 public class Ex45_stackSequenceCheck {
 
     public static void main(String[] args) {
-        //test 判断向下溢出
-        //N = 10 根据题意operation不能被遍历（使用量与N无关）
+        //test
         String operation = "01-2--34-56-7-89----";
         System.out.println(isUnderflow(operation));
         //test 判断给定序列是否能被产生
@@ -26,11 +25,19 @@ public class Ex45_stackSequenceCheck {
         System.out.println(check(operation,candidate3));
 
     }
+    //判断给定序列是否会导致数组向下溢出，要求使用空间量与N无关
     public static boolean isUnderflow(String op){
         int size = 0;
+        int tail = 0;
+        while (tail<op.length()){
+            size += op.charAt(tail) == '-'?-1:1;
+            if (size<0)
+                return true;
+            tail++;
+        }
         return false;
     }
-    //判断s 是否能由 op 生成， 要求线性算法
+    //判断s 是否能由 op 生成， 要求线性算法 O(n) = N
     public static boolean check(String op, String s){
         String result = "";
         Stack stack = new Stack();
@@ -44,6 +51,8 @@ public class Ex45_stackSequenceCheck {
         return result.indexOf(s) > -1;
     }
     //Ex46 判断s 是否能由 op 生成，若s中包含题中所述三元组，则返回false
+    //由于序列中数字的入栈顺序固定(0,1,2,...,N),若栈中存在这样的数组，
+    //c>b>a， c入栈时a,b已在栈中， 则b必定会在a之后入栈，亦即b必定会在a之前出栈
     public static boolean checkWithBannedSequence(String op, String s){
         return false;
     }

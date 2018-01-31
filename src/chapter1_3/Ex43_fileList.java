@@ -1,5 +1,7 @@
 package chapter1_3;
 
+import edu.princeton.cs.algs4.StdOut;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -15,19 +17,21 @@ import java.util.Scanner;
 public class Ex43_fileList {
 
     public static void main(String[] args) throws FileNotFoundException {
-
+        String path = "E:\\code\\intelliJ\\algorithm_4th_edition_exercises";
+        fileList(path);
     }
 
-    public void fileList(String filePath){
+    public static void fileList(String filePath){
         File file = new File(filePath);
         fileList(file,0);
     }
-    public void fileList(File file, int depth){
+    public static void fileList(File file, int depth){
         File[] fileList = file.listFiles();
         for (File f : fileList){
-
+            for(int i=0;i<depth;i++) StdOut.print("\t");
+            StdOut.println(f.getName());
             if (f.isDirectory())
-                fileList(f,0);
+                fileList(f,depth+1);
 
         }
     }
