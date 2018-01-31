@@ -1,5 +1,6 @@
 package chapter1_3;
 
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 
 /**
@@ -41,34 +42,42 @@ public class Ex12_iterableStack<Item> implements Iterable<Item>{
         N--;
         return item;
     }
-
-    public static Ex12_iterableStack copy(Ex12_iterableStack<String> s){
-        Iterator<String> it = s.iterator();
-        Ex12_iterableStack<String> result = new Ex12_iterableStack<>();
-        Ex12_iterableStack<String> temp = new Ex12_iterableStack<>();
-        while (it.hasNext()) {
-            temp.push(it.next());
-        }
-        it = temp.iterator();
-        while (it.hasNext()) {
-            result.push(it.next());
-        }
-        return result;
-    }
-
+    //Ex50
     @Override
     public Iterator<Item> iterator() {
-        return new Iterator<Item>() {
-            @Override
-            public boolean hasNext() {
-                return N > 0;
-            }
-
-            @Override
-            public Item next() {
-                return pop();
-            }
-        };
+        return new StackItr();
     }
 
+    private class StackItr implements Iterator{
+        private int size = N;
+        private Node current = first;
+
+        @Override
+        public boolean hasNext() {
+            if (size != N) throw new ConcurrentModificationException();
+            return size > 0;
+        }
+
+        @Override
+        public Item next() {
+            if (!hasNext()) throw new IndexOutOfBoundsException();
+            Item item = current.next.item;
+            current = current.next;
+            size--;
+            if (size != N) throw new ConcurrentModificationException();
+            return item;
+        }
+    }
+
+    public static void main(String[] args) {
+        //test Ex50
+        Ex12_iterableStack<Integer> stack = new Ex12_iterableStack<>();
+        stack.push(1);
+        stack.push(1);
+        stack.push(1);
+
+        Iterator it = stack.iterator();
+        while (it.hasNext())
+            stack.push(2);
+    }
 }

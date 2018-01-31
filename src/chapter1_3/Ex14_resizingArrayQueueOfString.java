@@ -59,6 +59,5 @@ public class Ex14_resizingArrayQueueOfString {
             queue.deQueue();
         System.out.println(queue.deQueue());
 
-
     }
 }
