@@ -10,7 +10,10 @@ package chapter1_3;
  * @UpdateDate: 2018/1/30/030 16:33
  */
 public class Ex49_queueOfStacks<Item> {
-    //双栈实现队列 队列操作均摊到每个元素复杂度为O(1)，暂未想到更好的方法
+    //双栈实现队列 队列操作均摊到每个元素复杂度为O(1)
+    //但最坏情况下复杂度为O(n).
+    //目前有一种使用6个栈来完成此题的方法
+    //https://www.cnblogs.com/ikesnowy/p/7157813.html
     private Stack<Item> a = new Stack<>();
     private Stack<Item> b = new Stack<>();
 
