@@ -65,4 +65,8 @@ public class Ex32_steque<Item> {
         }
         N++;
     }
+
+    public boolean isEmpty(){
+        return N == 0;
+    }
 }

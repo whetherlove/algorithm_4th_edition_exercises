@@ -24,7 +24,7 @@ public class Ex11_staticSETofInts {
         return rank(key) != -1;
     }
 
-     public int rank(int key){
+    public int rank(int key){
         int lo = 0;
         int hi = a.length - 1;
         while (lo <= hi){
@@ -37,9 +37,9 @@ public class Ex11_staticSETofInts {
                 return mid;
         }
         return -1;
-     }
+    }
 
-     public int howMany(int key){
+    public int howMany(int key){
         return rankHi(key) - rankLo(key) + 1;
      }
 

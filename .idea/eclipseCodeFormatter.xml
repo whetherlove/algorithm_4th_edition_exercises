@@ -4,7 +4,9 @@
     <option name="projectSpecificProfile">
       <ProjectSpecificProfile>
         <option name="formatter" value="ECLIPSE" />
-        <option name="pathToConfigFileJava" value="$PROJECT_DIR$/../../eclipse/JavaCodeTemple/codeformat.xml" />
+        <option name="importOrderConfigFilePath" value="/Applications/IntelliJ IDEA.app/codeformatter.xml" />
+        <option name="importOrderFromFile" value="true" />
+        <option name="pathToConfigFileJava" value="/Applications/IntelliJ IDEA.app/codeformatter.xml" />
         <option name="selectedJavaProfile" value="my code formatter" />
       </ProjectSpecificProfile>
     </option>
