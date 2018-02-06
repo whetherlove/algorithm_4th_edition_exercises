@@ -15,4 +15,3 @@
 &emsp;[1.4 算法分析](https://github.com/whetherlove/algorithm_4th_edition_exercises/tree/master/src/chapter1_4)<br />
 &emsp;[1.5 案例研究：union-find算法](https://github.com/whetherlove/algorithm_4th_edition_exercises/tree/master/src/chapter1_5)<br />
 
-### [官方代码](https://github.com/jimmysuncpt/Algorithms/tree/master/src/edu/princeton/cs/algs4)<br />
