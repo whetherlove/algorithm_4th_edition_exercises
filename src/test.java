@@ -1,3 +1,5 @@
+import edu.princeton.cs.algs4.ST;
+
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: PACKAGE_NAME
@@ -8,11 +10,10 @@
  */
 public class test {
 
+
     public static void main(String[] args) {
 
 
-        String availableOp = "+-*/";
-        System.out.println("*".indexOf(availableOp));
-        System.out.println("3".indexOf(availableOp));
     }
+
 }
