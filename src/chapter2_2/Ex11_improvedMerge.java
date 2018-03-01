@@ -38,7 +38,7 @@ public class Ex11_improvedMerge {
         }
     }
 
-    private static void exch(Comparable[] a, int i, int j) {
+    public static void exch(Comparable[] a, int i, int j) {
         Comparable temp = a[i];
         a[i] = a[j];
         a[j] = temp;
