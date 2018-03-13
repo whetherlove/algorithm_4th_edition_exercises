@@ -11,6 +11,7 @@ import java.util.Arrays;
  * @Description:
  * @date 23/02/2018 4:41 PM
  */
+@SuppressWarnings("ConstantConditions")
 class Ex16_check {
 
     private static boolean check(Method m) throws InvocationTargetException, IllegalAccessException {

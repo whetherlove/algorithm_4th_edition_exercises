@@ -15,7 +15,7 @@ import static chapter2_2.Merge.less;
  * @Description:
  * @date 28/02/2018 6:12 PM
  */
-@SuppressWarnings("Duplicates")
+@SuppressWarnings({"Duplicates", "UnusedAssignment"})
 class Ex18_quick3sample {
 
     private static void sort(Comparable[] a) {

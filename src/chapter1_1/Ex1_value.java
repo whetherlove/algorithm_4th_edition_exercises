@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/23/023 13:34
  * @UpdateDate: 2018/1/23/023 13:34
  */
-@SuppressWarnings("PointlessArithmeticExpression")
+@SuppressWarnings({"PointlessArithmeticExpression", "ConstantConditions"})
 class Ex1_value {
 
     public static void main(String[] args) {

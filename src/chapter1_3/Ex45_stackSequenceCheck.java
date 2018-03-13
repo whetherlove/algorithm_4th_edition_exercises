@@ -54,6 +54,7 @@ class Ex45_stackSequenceCheck {
     //Ex46 判断s 是否能由 op 生成，若s中包含题中所述三元组，则返回false
     //由于序列中数字的入栈顺序固定(0,1,2,...,N),若栈中存在这样的数组，
     //c>b>a， c入栈时a,b已在栈中， 则b必定会在a之后入栈，亦即b必定会在a之前出栈
+    @SuppressWarnings("SameReturnValue")
     public static boolean checkWithBannedSequence(String op, String s){
         return false;
     }

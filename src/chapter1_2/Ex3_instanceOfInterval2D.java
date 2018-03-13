@@ -12,6 +12,7 @@ import java.util.Arrays;
  * @CreateDate: 2018/1/27/027 11:46
  * @UpdateDate: 2018/1/27/027 11:46
  */
+@SuppressWarnings("SameReturnValue")
 class Ex3_instanceOfInterval2D {
 
     public static void main(String[] args) {
@@ -27,7 +28,7 @@ class Ex3_instanceOfInterval2D {
         System.out.print("Specify the max length:");
         double max = StdIn.readDouble();
 
-        Interval2D[] intervals = new Interval2D[n];
+        @SuppressWarnings("MismatchedReadAndWriteOfArray") Interval2D[] intervals = new Interval2D[n];
         Interval2D[] interval2Ds = Arrays.stream(intervals)
                 .map(e -> generator(min,max))
                 .peek(Interval2D::draw)
@@ -61,6 +62,7 @@ class Ex3_instanceOfInterval2D {
     //由于Intervals2D中坐标信息均为private,
     //通过parse其toString方法得到对应点
     //此处统一返回false;
+    @SuppressWarnings("SameReturnValue")
     private static boolean contains(Interval2D a, Interval2D b){
         return false;
     }

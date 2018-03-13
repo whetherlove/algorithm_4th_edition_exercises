@@ -10,6 +10,7 @@ import java.util.NoSuchElementException;
  * @CreateDate: 2018/1/30/030 15:08
  * @UpdateDate: 2018/1/30/030 15:08
  */
+@SuppressWarnings("ConstantConditions")
 class Ex42_copyStack<Item> extends NodeList<Item>{
 
     private Ex42_copyStack(){}

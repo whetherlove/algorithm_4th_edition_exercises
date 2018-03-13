@@ -10,6 +10,7 @@ import java.util.Arrays;
  * @CreateDate: 2018/1/27/027 19:17
  * @UpdateDate: 2018/1/27/027 19:17
  */
+@SuppressWarnings("ConstantConditions")
 class Ex18_accumulator {
 
     private double m;

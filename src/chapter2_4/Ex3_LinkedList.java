@@ -10,6 +10,7 @@ import java.util.LinkedList;
  * @Description:
  * @date 6/03/2018 7:20 PM
  */
+@SuppressWarnings("ConstantConditions")
 class Ex3_LinkedList<Item extends Comparable<Item>> {
 
     private final LinkedList<Item> pq = new LinkedList<>();

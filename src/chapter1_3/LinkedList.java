@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
  * @CreateDate: 2018/1/28/028 16:21
  * @UpdateDate: 2018/1/28/028 16:21
  */
-@SuppressWarnings({"unchecked", "SameParameterValue"})
+@SuppressWarnings({"unchecked", "SameParameterValue", "ConstantConditions"})
 class LinkedList<Item> implements Iterable<Object> {
 
     private Node first;
@@ -60,14 +60,14 @@ class LinkedList<Item> implements Iterable<Object> {
         }
     }
 
-    void deleteFirst(){
+    private void deleteFirst(){
         if (N == 0) throw new NoSuchElementException();
         if (N == 1) first = null;
         first = first.next;
         N--;
     }
     //Ex 1.3.19
-    void deleteLast(){
+    private void deleteLast(){
         if (N == 0) throw new NoSuchElementException();
         if (N == 1) first = null;
         if (N == 2){
@@ -83,7 +83,7 @@ class LinkedList<Item> implements Iterable<Object> {
         N--;
     }
     //Ex 1.3.20
-    void delete(int k){
+    private void delete(int k){
         if (k < 0 || k > N)
             throw new NoSuchElementException();
         if (k == N)
@@ -108,7 +108,7 @@ class LinkedList<Item> implements Iterable<Object> {
         return false;
     }
     //Ex1.3.24
-    void removeAfter(Node n){
+    private void removeAfter(Node n){
         if (n == null || n.next == null)
             throw new NoSuchElementException();
         Node temp = n.next;
@@ -117,7 +117,7 @@ class LinkedList<Item> implements Iterable<Object> {
         N--;
     }
     //Ex1.3.25
-    void insertAfter(Node t, Node n){
+    private void insertAfter(Node t, Node n){
         n.next = null;
         if (t == null || n == null)
             throw new NoSuchElementException("Cannot find Node t");

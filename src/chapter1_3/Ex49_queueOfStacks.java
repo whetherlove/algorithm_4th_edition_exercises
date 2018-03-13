@@ -9,6 +9,7 @@ package chapter1_3;
  * @CreateDate: 2018/1/30/030 16:33
  * @UpdateDate: 2018/1/30/030 16:33
  */
+@SuppressWarnings("StatementWithEmptyBody")
 class Ex49_queueOfStacks<Item> {
     //双栈实现队列 队列操作均摊到每个元素复杂度为O(1)
     //但最坏情况下复杂度为O(n).
@@ -17,11 +18,11 @@ class Ex49_queueOfStacks<Item> {
     private final Stack<Item> a = new Stack<>();
     private final Stack<Item> b = new Stack<>();
 
-    void enqueue(Item item){
+    private void enqueue(Item item){
         a.push(item);
     }
 
-    Item dequeue(){
+    private Item dequeue(){
         if (a.size() == 0);
         else {
             while (a.size() > 0)

@@ -7,6 +7,7 @@ package chapter1_4;
  * @Description:
  * @date 5/02/2018 10:20 AM
  */
+@SuppressWarnings("UnusedAssignment")
 class Ex22_MihaiPatrascu {
 
     public static void main(String[] args) {

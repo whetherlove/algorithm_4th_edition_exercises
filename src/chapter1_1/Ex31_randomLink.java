@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @CreateDate: 2018/1/24/024 13:44
  * @UpdateDate: 2018/1/24/024 13:44
  */
+@SuppressWarnings("ConstantConditions")
 class Ex31_randomLink {
 
     public static void main(String[] args) {

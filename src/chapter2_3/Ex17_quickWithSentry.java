@@ -15,6 +15,7 @@ import static chapter2_2.Merge.less;
  * @Description:
  * @date 28/02/2018 5:24 PM
  */
+@SuppressWarnings({"ConstantConditions", "StatementWithEmptyBody"})
 class Ex17_quickWithSentry {
 
     private static void sort(Comparable[] a) {

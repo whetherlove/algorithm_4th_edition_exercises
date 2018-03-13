@@ -8,6 +8,7 @@ package chapter1_3;
  * @CreateDate: 2018/1/29/029 8:31
  * @UpdateDate: 2018/1/29/029 8:31
  */
+@SuppressWarnings({"ConstantConditions", "UnusedAssignment"})
 class Ex31_linkedListWithDoubleNode<Item> {
 
     private DoubleNode first;
@@ -18,7 +19,7 @@ class Ex31_linkedListWithDoubleNode<Item> {
         DoubleNode next;
     }
 
-    void insertFirst(DoubleNode n){
+    private void insertFirst(DoubleNode n){
         if (N == 0) first = n;
         else {
             n.next = first;
@@ -27,7 +28,7 @@ class Ex31_linkedListWithDoubleNode<Item> {
         N++;
     }
 
-    void insertLast(DoubleNode n){
+    private void insertLast(DoubleNode n){
         if (N == 0) first = n;
         else {
             DoubleNode current = first;
@@ -64,7 +65,7 @@ class Ex31_linkedListWithDoubleNode<Item> {
         N--;
     }
     //默认t存在于该链表中,n为将要添加的节点
-    void insertBefore(DoubleNode t, DoubleNode n){
+    private void insertBefore(DoubleNode t, DoubleNode n){
         if (first == t){
             n.next = t;
             t.previous = n;
@@ -93,7 +94,7 @@ class Ex31_linkedListWithDoubleNode<Item> {
         N++;
     }
     //默认n存在于该链表中
-    void delete(DoubleNode n){
+    private void delete(DoubleNode n){
         if (N == 1) first = null;
         else if (n.previous == null)
             deleteFirst();

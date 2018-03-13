@@ -3,7 +3,6 @@ package chapter1_3;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 
 /**
  * @ProjectName: algorithm_4th_edition_exercises
@@ -13,6 +12,7 @@ import java.io.FileNotFoundException;
  * @CreateDate: 2018/1/30/030 15:19
  * @UpdateDate: 2018/1/30/030 15:19
  */
+@SuppressWarnings("ConstantConditions")
 class Ex43_fileList {
 
     public static void main(String[] args) {

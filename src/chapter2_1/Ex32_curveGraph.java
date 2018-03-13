@@ -15,6 +15,7 @@ import static java.util.Arrays.sort;
  * @Description:
  * @date 24/02/2018 4:50 PM
  */
+@SuppressWarnings("ConstantConditions")
 class Ex32_curveGraph {
 
     private static void init(){

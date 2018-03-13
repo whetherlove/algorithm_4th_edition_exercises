@@ -9,6 +9,7 @@ import edu.princeton.cs.algs4.Queue;
  * @Description:
  * @date 8/03/2018 5:26 PM
  */
+@SuppressWarnings("JavaDoc")
 class Ex24_binaryTree<Item extends Comparable<Item>> {
 
     private final Node root = new Node();
@@ -82,7 +83,7 @@ class Ex24_binaryTree<Item extends Comparable<Item>> {
     }
 
     @SuppressWarnings("unchecked")
-    Item delMax(){
+    private Item delMax(){
         Item max = max();
         Node last = root;
         Queue<Node> queue = new Queue();

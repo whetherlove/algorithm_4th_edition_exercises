@@ -24,7 +24,7 @@ class Ex1_instanceOfPoint2D {
 
         System.out.println("Enter the number of points:");
         int n = StdIn.readInt();
-        Point2D[] points = new Point2D[n];
+        @SuppressWarnings("MismatchedReadAndWriteOfArray") Point2D[] points = new Point2D[n];
         Point2D[] generatedPoints = Arrays.stream(points)
                 .map(e -> new Point2D(Math.random(),Math.random()))
                 .peek(Point2D::draw)
