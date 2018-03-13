@@ -1,4 +1,10 @@
+import edu.princeton.cs.algs4.IndexMinPQ;
+import edu.princeton.cs.algs4.MinPQ;
+import org.junit.Test;
 
+import java.util.LinkedList;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @ProjectName: algorithm_4th_edition_exercises
@@ -8,13 +14,10 @@
  * @CreateDate: 2018/1/24/024 15:33
  * @UpdateDate: 2018/1/24/024 15:33
  */
-public class test {
-
+public class test{
 
     public static void main(String[] args) {
-
-        System.out.println(-9/2 + " " + -9%2);
-        System.out.println(9/-2 + " " + 9%-2);
     }
+
 
 }

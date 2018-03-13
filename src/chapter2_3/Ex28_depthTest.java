@@ -44,6 +44,5 @@ public class Ex28_depthTest {
             StdRandom.shuffle(a);
             System.out.println("N:" + N + " depth:" + sort(a));
         }
-
     }
 }
