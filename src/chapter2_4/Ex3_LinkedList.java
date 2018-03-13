@@ -1,6 +1,5 @@
 package chapter2_4;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
@@ -11,19 +10,19 @@ import java.util.LinkedList;
  * @Description:
  * @date 6/03/2018 7:20 PM
  */
-public class Ex3_LinkedList<Item extends Comparable<Item>> {
+class Ex3_LinkedList<Item extends Comparable<Item>> {
 
-    private LinkedList<Item> pq = new LinkedList<>();
+    private final LinkedList<Item> pq = new LinkedList<>();
 
-    public void insert(Item v){
+    private void insert(Item v){
         pq.add(v);
     }
 
-    public Item max(){
+    private Item max(){
         return pq.stream().max(Comparator.naturalOrder()).get();
     }
 
-    public Item delMax() {
+    private Item delMax() {
         Item max = max();
         //最大值有多个要求只删除一个，不能直接使用remove
         for (int i = 0; i < pq.size(); i++) {
@@ -35,6 +34,7 @@ public class Ex3_LinkedList<Item extends Comparable<Item>> {
         return max;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Ex3_LinkedList pq = new Ex3_LinkedList();
         pq.insert(2);

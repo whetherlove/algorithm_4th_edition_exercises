@@ -9,17 +9,17 @@ import java.util.Arrays;
  * @Description:
  * @date 6/02/2018 5:56 PM
  */
-public class QuickUnionUF {
+@SuppressWarnings("Duplicates")
+class QuickUnionUF {
 
-    private int[] id;
-    private int[] sz;
+    private final int[] id;
     private int count;
     private int times = 0;
 
-    public QuickUnionUF(int N){
+    private QuickUnionUF(int N){
         count = N;
         id = new int[N];
-        sz = new int[N];
+        int[] sz = new int[N];
         for (int i = 0; i < N; i++) {
             id[i] = i;
             sz[i] = 1;
@@ -34,7 +34,7 @@ public class QuickUnionUF {
         return find(p) == find(q);
     }
 
-    public int find(int p){
+    private int find(int p){
         while (p != id[p]) {
             p = id[p];
             times++;
@@ -42,7 +42,7 @@ public class QuickUnionUF {
         return p;
     }
 
-    public void union(int p, int q){
+    private void union(int p, int q){
         int pRoot = find(p);
         int qRoot = find(q);
         if (pRoot == qRoot) return;
@@ -56,12 +56,12 @@ public class QuickUnionUF {
         int N = 10;
         QuickUnionUF uf = new QuickUnionUF(N);
         System.out.println(Arrays.toString(uf.id));
-        for (int i = 0; i < input.length; i++) {
+        for (int[] anInput : input) {
             //每次调用union，必调用2次find,若pRoot != qRoot, 则额外访问数组1次
             //每次调用find，访问数组次数为p到其根节点的深度
-            int p = input[i][0];
-            int q = input[i][1];
-            uf.union(p,q);
+            int p = anInput[0];
+            int q = anInput[1];
+            uf.union(p, q);
             System.out.print(Arrays.toString(uf.id));
             System.out.println("\t" + uf.times);
         }

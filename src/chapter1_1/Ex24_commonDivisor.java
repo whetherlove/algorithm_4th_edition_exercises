@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/23/023 19:04
  * @UpdateDate: 2018/1/23/023 19:04
  */
-public class Ex24_commonDivisor {
+class Ex24_commonDivisor {
     public static void main(String[] args) {
         System.out.println(commonDivisor(1111111,1234567));
     }

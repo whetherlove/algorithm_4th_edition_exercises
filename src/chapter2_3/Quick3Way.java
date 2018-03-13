@@ -11,14 +11,15 @@ import static chapter2_2.Ex11_improvedMerge.exch;
  * @Description:
  * @date 28/02/2018 11:31 AM
  */
-public class Quick3Way {
+class Quick3Way {
 
     public static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         sort(a, 0, a.length - 1);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    @SuppressWarnings("unchecked")
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo)
             return;
         int lt = lo, i = lo + 1, gt = hi;

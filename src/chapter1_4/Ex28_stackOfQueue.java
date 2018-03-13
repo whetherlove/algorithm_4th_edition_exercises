@@ -9,15 +9,15 @@ import edu.princeton.cs.algs4.Queue;
  * @Description:
  * @date 5/02/2018 9:09 PM
  */
-public class Ex28_stackOfQueue<Item> {
+class Ex28_stackOfQueue<Item> {
 
-    private Queue<Item> queue = new Queue<>();
+    private final Queue<Item> queue = new Queue<>();
 
-    public void push(Item item){
+    void push(Item item){
         queue.enqueue(item);
     }
 
-    public Item pop(){
+    Item pop(){
         for (int i=0;i<queue.size()-1;i++)
             queue.enqueue(queue.dequeue());
         return queue.dequeue();

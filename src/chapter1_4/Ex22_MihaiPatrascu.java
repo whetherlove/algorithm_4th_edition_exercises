@@ -7,7 +7,7 @@ package chapter1_4;
  * @Description:
  * @date 5/02/2018 10:20 AM
  */
-public class Ex22_MihaiPatrascu {
+class Ex22_MihaiPatrascu {
 
     public static void main(String[] args) {
 
@@ -16,7 +16,7 @@ public class Ex22_MihaiPatrascu {
         System.out.println(mihaiPatrascu(a,0));
     }
 
-    public static boolean mihaiPatrascu(int[] a, int key){
+    private static boolean mihaiPatrascu(int[] a, int key){
         int fn = 1;
         int fn_1 = 1;
         int fn_2 = 0;

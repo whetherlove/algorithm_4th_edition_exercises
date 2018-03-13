@@ -13,6 +13,7 @@ import java.util.Iterator;
 public class ResizingArrayStack<Item> implements Iterable<Item> {
 
     //使用泛型Item
+    @SuppressWarnings("unchecked")
     Item[] a = (Item[]) new Object[1]; // stack entries
     int N = 0; // size
 
@@ -20,16 +21,15 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
         return N == 0;
     }
 
-    public int size() {
+    int size() {
         return N;
     }
 
     //动态调整数组大小
+    @SuppressWarnings("unchecked")
     void resize(int max) {
         Item[] temp = (Item[]) new Object[max];
-        for (int i = 0; i < N; i++) {
-            temp[i] = a[i];
-        }
+        System.arraycopy(a, 0, temp, 0, N);
         a = temp;
     }
 
@@ -40,7 +40,7 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
         a[N++] = item;
     }
 
-    public Item pop() {
+    Item pop() {
         Item item = a[--N];
         //将弹出的对象设为null,避免对象游离
         a[N] = null;

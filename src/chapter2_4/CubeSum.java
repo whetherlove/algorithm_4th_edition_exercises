@@ -3,7 +3,6 @@ package chapter2_4;
 import edu.princeton.cs.algs4.MinPQ;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 
 /**
  * @author Jacob Zhang
@@ -12,21 +11,20 @@ import java.util.Comparator;
  * @Description:
  * @date 9/03/2018 12:57 PM
  */
-public class CubeSum {
+@SuppressWarnings("SameParameterValue")
+class CubeSum {
 
-    private MinPQ<Entry> pq;
-
-    private int N;
+    private final MinPQ<Entry> pq;
 
     private class Entry implements Comparable {
 
-        private long sum;
+        private final long sum;
 
-        private int i;
+        private final int i;
 
-        private int j;
+        private final int j;
 
-        public Entry(int i, int j) {
+        Entry(int i, int j) {
             this.i = i;
             this.j = j;
             sum = i * i * i + j * j * j;
@@ -47,14 +45,11 @@ public class CubeSum {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             Entry entry = (Entry) o;
-            if (sum != entry.sum) return false;
-            if (i != entry.i) return false;
-            return j == entry.j;
+            return sum == entry.sum && i == entry.i && j == entry.j;
         }
     }
 
-    public CubeSum(int N) {
-        this.N = N;
+    private CubeSum(int N) {
         pq = new MinPQ<>();
         for (int i = 0; i <= N; i++)
             pq.insert(new Entry(i, 0));
@@ -70,7 +65,7 @@ public class CubeSum {
         }
     }
     // 获取下一个最小值
-    public Entry getMin(){
+    private Entry getMin(){
         Entry min = pq.delMin();
         if (min.j + 1 < min.i)
             pq.insert(new Entry(min.i, min.j + 1));
@@ -78,7 +73,7 @@ public class CubeSum {
         return min;
     }
 
-    public void findEquals() {
+    private void findEquals() {
         ArrayList<Entry> list = new ArrayList<>();
         Entry current = getMin();
         list.add(current);
@@ -102,8 +97,8 @@ public class CubeSum {
     }
 
     private void getA_D(ArrayList<Entry> list) {
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
+        for (Entry aList : list) {
+            System.out.println(aList);
         }
     }
 

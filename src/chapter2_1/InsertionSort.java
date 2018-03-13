@@ -9,11 +9,11 @@ import java.util.Arrays;
  * @Description:
  * @date 20/02/2018 3:42 PM
  */
-public class InsertionSort {
+class InsertionSort {
 
     // 插入排序 ~N^2 适用于部分有序的数组 和 小规模数组
     // 从小到大 相邻元素比较 每次循环将第i个数插入之前的有序数列
-    public static void sort(int[] a) {
+    private static void sort(int[] a) {
         for (int i = 0; i < a.length; i++) {
             for (int j = i; j > 0; j--) {
                 if (a[j] < a[j - 1]) {

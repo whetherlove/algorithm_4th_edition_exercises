@@ -7,9 +7,9 @@ package chapter2_1;
  * @Description:
  * @date 24/02/2018 4:38 PM
  */
-public class Ex30_bestT {
+class Ex30_bestT {
 
-    public static void sort(double[] a, int t){
+    private static void sort(double[] a, int t){
 
         int h = 1;
         while (h*h < a.length)

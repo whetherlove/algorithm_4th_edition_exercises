@@ -12,13 +12,14 @@ import static chapter2_2.Merge.less;
  * @Description: Quicksort with RandomSplitter, used in Ex29, Ex30
  * @date 1/03/2018 4:39 PM
  */
-public class QuickRandomSplitter {
+@SuppressWarnings("Duplicates")
+class QuickRandomSplitter {
 
     public static void sort(Comparable[] a) {
         sort(a, 0, a.length - 1);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo)
             return;
         int j = partition(a, lo, hi);
@@ -26,7 +27,7 @@ public class QuickRandomSplitter {
         sort(a, j + 1, hi);
     }
 
-    public static int partition(Comparable[] a, int lo, int hi) {
+    private static int partition(Comparable[] a, int lo, int hi) {
         int i = lo, j = hi + 1;
         int r = StdRandom.uniform(lo,hi+1);
         Comparable v = a[r];

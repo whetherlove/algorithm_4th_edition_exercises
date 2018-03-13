@@ -11,7 +11,8 @@ import static chapter1_4.DoublingTest.*;
  * @Description:
  * @date 6/02/2018 1:24 PM
  */
-public class DoublingRatio {
+@SuppressWarnings("InfiniteLoopStatement")
+class DoublingRatio {
 
     public static void main(String[] args) {
 

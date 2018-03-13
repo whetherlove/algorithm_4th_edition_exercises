@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.StdOut;
  * @CreateDate: 2018/1/23/023 15:30
  * @UpdateDate: 2018/1/23/023 15:30
  */
-public class Ex11_print2DBoolArray {
+class Ex11_print2DBoolArray {
 
     public static void main(String[] args) {
 

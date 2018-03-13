@@ -12,12 +12,13 @@ import java.util.Iterator;
  * @CreateDate: 2018/1/30/030 15:22
  * @UpdateDate: 2018/1/30/030 15:22
  */
-public class Ex44_buffer {
+@SuppressWarnings("SameParameterValue")
+class Ex44_buffer {
 
-    private Stack<Character> main = new Stack<>();
-    private Stack<Character> sup = new Stack<>();
+    private final Stack<Character> main = new Stack<>();
+    private final Stack<Character> sup = new Stack<>();
 
-    public void insert(char c){
+    private void insert(char c){
         main.push(c);
     }
 
@@ -25,7 +26,7 @@ public class Ex44_buffer {
         return main.pop();
     }
 
-    public void left(int k){
+    private void left(int k){
         if (k>size()) k=size();
         for (int i=0;i<k;i++)
             sup.push(main.pop());
@@ -36,7 +37,7 @@ public class Ex44_buffer {
             main.push(sup.pop());
     }
 
-    public int size(){
+    private int size(){
         return main.size()+sup.size();
     }
 
@@ -44,13 +45,13 @@ public class Ex44_buffer {
     public String toString() {
         Iterator mainIt = main.iterator();
         Iterator supIt = sup.iterator();
-        String s = "main:";
+        StringBuilder s = new StringBuilder("main:");
         while (mainIt.hasNext())
-            s += mainIt.next();
-        s += " sup:";
+            s.append(mainIt.next());
+        s.append(" sup:");
         while (supIt.hasNext())
-            s += supIt.next();
-        return s;
+            s.append(supIt.next());
+        return s.toString();
     }
 
     public static void main(String[] args) {

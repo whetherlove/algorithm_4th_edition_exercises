@@ -9,12 +9,12 @@ import java.util.Arrays;
  * @Description:
  * @date 5/02/2018 11:21 AM
  */
-public class Ex23_bsFraction {
+class Ex23_bsFraction {
 
-    public static boolean rank(Fraction key, Fraction[] a){
+    private static boolean rank(Fraction key, Fraction[] a){
         return rank(key,a,0,a.length-1);
     }
-    public static boolean rank(Fraction key, Fraction[] a, int lo, int hi){
+    private static boolean rank(Fraction key, Fraction[] a, int lo, int hi){
         if (lo > hi) return false;
         int mid = lo + (hi - lo) / 2;
         double N = Math.max(a[mid].denominator,key.denominator);
@@ -37,8 +37,7 @@ public class Ex23_bsFraction {
                                 new Fraction(1,7)
         };
         Arrays.sort(fractions);
-        for (int i=0;i<fractions.length;i++)
-            System.out.println(fractions[i]);
+        for (Fraction fraction : fractions) System.out.println(fraction);
 
         System.out.println(rank(new Fraction(4,6),fractions));
         System.out.println(rank(new Fraction(1,6),fractions));
@@ -47,9 +46,9 @@ public class Ex23_bsFraction {
 
 class Fraction implements Comparable<Fraction>{
 
-    double numerator;
-    double denominator;
-    double value;
+    private final double numerator;
+    final double denominator;
+    final double value;
 
     Fraction(double n, double d){
         numerator = n;

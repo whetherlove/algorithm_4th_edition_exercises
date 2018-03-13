@@ -13,8 +13,8 @@ import java.util.Arrays;
  * @CreateDate: 2018/1/24/024 14:53
  * @UpdateDate: 2018/1/24/024 14:53
  */
-public class Ex32_histogram {
-    static final double[] input = {1.0,2.0,3.0,3.0};
+class Ex32_histogram {
+    private static final double[] input = {1.0,2.0,3.0,3.0};
 
     public static void main(String[] args) {
 
@@ -43,7 +43,7 @@ public class Ex32_histogram {
 
     }
 
-    public static double getUnitNum(double l, double r){
+    private static double getUnitNum(double l, double r){
         return Arrays.stream(input).filter(e -> e>l && e< r).count();
 
     }

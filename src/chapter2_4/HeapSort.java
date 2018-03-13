@@ -1,8 +1,6 @@
 package chapter2_4;
 
 
-import edu.princeton.cs.algs4.Heap;
-
 import java.util.Arrays;
 
 import static chapter2_3.Quick.less;
@@ -14,9 +12,9 @@ import static chapter2_3.Quick.less;
  * @Description:
  * @date 7/03/2018 4:25 PM
  */
-public class HeapSort {
+class HeapSort {
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         int n = a.length-1;
         for (int k = n / 2; k >= 1; k--)
             sink(a, k, n);
@@ -38,7 +36,7 @@ public class HeapSort {
         }
     }
 
-    public static void exch(Comparable[] a, int i, int j){
+    private static void exch(Comparable[] a, int i, int j){
         Comparable t = a[i];
         a[i] = a[j];
         a[j] = t;

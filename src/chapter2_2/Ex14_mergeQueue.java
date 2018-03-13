@@ -2,8 +2,6 @@ package chapter2_2;
 
 import edu.princeton.cs.algs4.Queue;
 
-import java.util.ArrayList;
-
 import static chapter2_2.Merge.less;
 
 /**
@@ -13,9 +11,10 @@ import static chapter2_2.Merge.less;
  * @Description:
  * @date 25/02/2018 1:54 PM
  */
-public class Ex14_mergeQueue {
+class Ex14_mergeQueue {
 
-    public static Queue<Comparable> merge(Queue<Comparable> a, Queue<Comparable> b){
+    @SuppressWarnings("unchecked")
+    private static Queue merge(Queue<Comparable> a, Queue<Comparable> b){
         Queue r = new Queue();
         while (!(a.isEmpty() && b.isEmpty())){
             if (a.isEmpty())
@@ -30,6 +29,7 @@ public class Ex14_mergeQueue {
         return r;
     }
     //Ex15
+    @SuppressWarnings("unchecked")
     public static Queue<Comparable> merge(Queue<Comparable>[] a){
         Queue<Queue<Comparable>> r = new Queue();
         for (Queue<Comparable> q : a)

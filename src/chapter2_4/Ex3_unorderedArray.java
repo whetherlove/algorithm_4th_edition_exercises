@@ -1,8 +1,5 @@
 package chapter2_4;
 
-import java.util.Arrays;
-import java.util.Comparator;
-
 /**
  * @author Jacob Zhang
  * @ProjectName: algorithm_4th_edition_exercises
@@ -10,21 +7,23 @@ import java.util.Comparator;
  * @Description:
  * @date 6/03/2018 5:22 PM
  */
-public class Ex3_unorderedArray<Item extends Comparable<Item>> {
+@SuppressWarnings("SameParameterValue")
+class Ex3_unorderedArray<Item extends Comparable<Item>> {
 
-    private Item[] pq;
+    private final Item[] pq;
 
     private int N = 0;
 
-    public Ex3_unorderedArray(int max) {
+    @SuppressWarnings("unchecked")
+    private Ex3_unorderedArray(int max) {
         pq = (Item[]) new Comparable[max];
     }
 
-    public void insert(Item v) {
+    void insert(Item v) {
         pq[N++] = v;
     }
 
-    public Item max() {
+    Item max() {
         if (N == 0) return null;
         if (N == 1) return pq[0];
         Item max = pq[0];
@@ -34,7 +33,7 @@ public class Ex3_unorderedArray<Item extends Comparable<Item>> {
         return max;
     }
 
-    public Item delMax(){
+    Item delMax(){
         if (N == 0) return null;
         if (N == 1) return pq[0];
         Item max = max();
@@ -47,6 +46,7 @@ public class Ex3_unorderedArray<Item extends Comparable<Item>> {
         return max;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Ex3_unorderedArray<Integer> pq = new Ex3_unorderedArray(5);
         pq.insert(2);

@@ -8,13 +8,13 @@ package chapter1_1;
  * @CreateDate: 2018/1/23/023 16:37
  * @UpdateDate: 2018/1/23/023 16:37
  */
-public class Ex16_exR1 {
+class Ex16_exR1 {
 
     public static void main(String[] args) {
         System.out.println(exR1(6));
     }
 
-    public static String exR1(int n){
+    private static String exR1(int n){
         if (n < 0) return "";
         return exR1(n-3) + n + exR1(n-2) + n;
     }

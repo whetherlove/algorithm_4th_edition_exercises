@@ -5,7 +5,6 @@ import edu.princeton.cs.algs4.StdRandom;
 import java.util.Arrays;
 
 import static chapter2_2.Ex11_improvedMerge.exch;
-import static chapter2_3.Ex18_quick3sample.getMedian;
 
 /**
  * @author Jacob Zhang
@@ -14,14 +13,15 @@ import static chapter2_3.Ex18_quick3sample.getMedian;
  * @Description:
  * @date 1/03/2018 9:27 AM
  */
-public class Ex22_BentlyMcIlroy {
+class Ex22_BentlyMcIlroy {
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         sort(a, 0, a.length - 1);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    @SuppressWarnings("unchecked")
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo)
             return;
         int p = lo, i = lo + 1, q = hi, j = hi;

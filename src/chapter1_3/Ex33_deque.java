@@ -1,7 +1,5 @@
 package chapter1_3;
 
-import com.sun.scenario.effect.impl.prism.PrImage;
-
 import java.util.NoSuchElementException;
 
 /**
@@ -12,13 +10,14 @@ import java.util.NoSuchElementException;
  * @CreateDate: 2018/1/29/029 10:36
  * @UpdateDate: 2018/1/29/029 10:36
  */
-public class Ex33_deque<Item> {
+@SuppressWarnings("Duplicates")
+class Ex33_deque<Item> {
 
     private Node leftMost;
     private Node rightMost;
     private int N = 0;
     private class Node{
-        Item item;
+        final Item item;
         Node left;
         Node right;
         Node(Item i){
@@ -30,7 +29,7 @@ public class Ex33_deque<Item> {
         return N == 0;
     }
 
-    public int size(){
+    int size(){
         return N;
     }
 
@@ -71,8 +70,7 @@ public class Ex33_deque<Item> {
         }
         else {
             Item item = leftMost.item;
-            Node temp = leftMost.right;
-            leftMost = temp;
+            leftMost = leftMost.right;
             N--;
             return item;
         }
@@ -89,13 +87,13 @@ public class Ex33_deque<Item> {
         }
         else {
             Item item = rightMost.item;
-            Node temp = rightMost.left;
-            leftMost = temp;
+            leftMost = rightMost.left;
             N--;
             return item;
         }
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         //test
         Ex33_deque<Integer> deque = new Ex33_deque();

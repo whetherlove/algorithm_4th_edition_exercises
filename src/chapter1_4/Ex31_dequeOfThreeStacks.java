@@ -9,27 +9,27 @@ import edu.princeton.cs.algs4.Stack;
  * @Description:
  * @date 6/02/2018 9:36 AM
  */
-public class Ex31_dequeOfThreeStacks<Item> {
+class Ex31_dequeOfThreeStacks<Item> {
 
-    private Stack<Item> stack1 = new Stack<>();
-    private Stack<Item> stack2 = new Stack<>();
-    private Stack<Item> stack3 = new Stack<>();
+    private final Stack<Item> stack1 = new Stack<>();
+    private final Stack<Item> stack2 = new Stack<>();
+    private final Stack<Item> stack3 = new Stack<>();
 
-    public void pushLeft(Item item){
+    void pushLeft(Item item){
         stack1.push(item);
     }
 
-    public void pushRight(Item item){
+    void pushRight(Item item){
         stack2.push(item);
     }
 
-    public Item popLeft(){
+    Item popLeft(){
         if (!stack1.isEmpty())
             return stack1.pop();
         return pop(stack2);
     }
 
-    public Item popRight(){
+    Item popRight(){
         if (!stack2.isEmpty())
             return stack2.pop();
         return pop(stack1);

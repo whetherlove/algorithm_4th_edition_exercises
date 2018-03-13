@@ -11,9 +11,10 @@ import java.util.ArrayList;
  * @Description:
  * @date 24/02/2018 1:00 PM
  */
-public class Ex17_animation {
+@SuppressWarnings("SameParameterValue")
+class Ex17_animation {
 
-    public static void init(int N){
+    private static void init(int N){
         StdDraw.setCanvasSize(1000,500);
         StdDraw.setPenColor(StdDraw.BLACK);
         StdDraw.enableDoubleBuffering();
@@ -27,7 +28,7 @@ public class Ex17_animation {
         return doubles;
     }
 
-    public static void drawFrame(double[] a, ArrayList black, int red){
+    private static void drawFrame(double[] a, ArrayList black, int red){
         int N = a.length;
         double colWidth = 1.0 / (N+1) * 1.5;
         double colInterval = 1.0 / (N+1);
@@ -51,7 +52,7 @@ public class Ex17_animation {
         }
     }
 
-    public static void start(double[] a, ArrayList black, int red) throws InterruptedException {
+    private static void start(double[] a, ArrayList black, int red) throws InterruptedException {
         drawFrame(a,black,red);
         StdDraw.show();
         Thread.sleep(1000);
@@ -85,7 +86,7 @@ public class Ex17_animation {
         }
     }
 
-    public static void insertion(int N) throws InterruptedException {
+    private static void insertion(int N) throws InterruptedException {
         double[] a = generate(N);
         init(N);
         for (int i = 0; i < N; i++) {

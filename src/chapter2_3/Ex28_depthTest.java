@@ -12,19 +12,18 @@ import static chapter2_3.Quick.partition;
  * @Description:
  * @date 1/03/2018 4:01 PM
  */
-public class Ex28_depthTest {
+class Ex28_depthTest {
 
-    private static int M = 10; //20 50
-
-    public static int sort(Comparable[] a) {
+    private static int sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         int depth = 0;
         depth = sort(a, depth, 0, a.length - 1);
         return depth;
     }
 
-    public static int sort(Comparable[] a, int depth, int lo, int hi) {
-        if (hi - lo <= M){
+    private static int sort(Comparable[] a, int depth, int lo, int hi) {
+        int m = 10;
+        if (hi - lo <= m){
             Insertion.sort(a,lo,hi);
             return depth + 1;
         }

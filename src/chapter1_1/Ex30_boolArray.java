@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/24/024 13:29
  * @UpdateDate: 2018/1/24/024 13:29
  */
-public class Ex30_boolArray {
+class Ex30_boolArray {
 
     public static void main(String[] args) {
 
@@ -24,17 +24,14 @@ public class Ex30_boolArray {
 
     }
 
-    public static boolean isCoprime(int a,int b){
+    private static boolean isCoprime(int a, int b){
         return Ex24_commonDivisor.commonDivisor(a,b)==1;
     }
-    public static boolean [][] primeArray(int M, int N){
+    private static boolean [][] primeArray(int M, int N){
         boolean[][] a = new boolean[M][N];
         for (int i=1;i<=M;i++){
             for (int j=1;j<=N;j++){
-                if (isCoprime(i,j))
-                    a[i-1][j-1] = true;
-                else
-                    a[i-1][j-1] = false;
+                a[i - 1][j - 1] = isCoprime(i, j);
             }
         }
         return a;

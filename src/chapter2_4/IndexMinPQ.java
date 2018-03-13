@@ -9,14 +9,16 @@ import java.util.Arrays;
  * @Description:
  * @date 12/03/2018 3:04 PM
  */
-public class IndexMinPQ<Key extends Comparable<Key>> {
+@SuppressWarnings({"Duplicates", "SameParameterValue"})
+class IndexMinPQ<Key extends Comparable<Key>> {
 
     private int N; //PQ中的元素数量
-    private int[] pq;
-    private int[] qp;
-    private Key[] keys;
+    private final int[] pq;
+    private final int[] qp;
+    private final Key[] keys;
 
-    public IndexMinPQ(int max){
+    @SuppressWarnings("unchecked")
+    private IndexMinPQ(int max){
         keys = (Key[])new Comparable[max+1];
         pq = new int[max+1];
         qp = new int[max+1];
@@ -31,7 +33,7 @@ public class IndexMinPQ<Key extends Comparable<Key>> {
         return qp[k] != -1;
     }
 
-    public void insert(int k, Key key){
+    void insert(int k, Key key){
         N++;
         qp[k] = N;
         pq[N] = k;
@@ -68,11 +70,11 @@ public class IndexMinPQ<Key extends Comparable<Key>> {
         pq[j] = temp;
     }
 
-    public Key min(){
+    Key min(){
         return keys[pq[1]];
     }
 
-    public int delMin(){
+    int delMin(){
         int indexOfMin = pq[1];
         exch(1,N--);
         sink(1);
@@ -100,6 +102,7 @@ public class IndexMinPQ<Key extends Comparable<Key>> {
         qp[k] = -1;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         IndexMinPQ<Integer> pq = new IndexMinPQ(10);
         pq.insert(2,2);

@@ -2,8 +2,6 @@ package chapter1_3;
 
 import edu.princeton.cs.algs4.StdRandom;
 
-import java.util.Iterator;
-
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: chapter1_3
@@ -12,13 +10,13 @@ import java.util.Iterator;
  * @CreateDate: 2018/1/29/029 12:58
  * @UpdateDate: 2018/1/29/029 12:58
  */
-public class Ex35_randomQueue<Item> extends Ex34_randomBag<Item>{
+class Ex35_randomQueue<Item> extends Ex34_randomBag<Item>{
 
-    public void enqueue(Item item){
+    void enqueue(Item item){
         add(item);
     }
 
-    public Item dequeue(){
+    Item dequeue(){
         if (size == 0) throw new NullPointerException();
         if (size == 1){
             Item item = items[0];
@@ -34,7 +32,7 @@ public class Ex35_randomQueue<Item> extends Ex34_randomBag<Item>{
         return item;
     }
 
-    public Item sample(){
+    Item sample(){
         if (size == 0) throw new NullPointerException();
         return items[StdRandom.uniform(size-1)];
     }
@@ -54,9 +52,7 @@ public class Ex35_randomQueue<Item> extends Ex34_randomBag<Item>{
         System.out.println(queue.size());
 
         //iteration
-        Iterator it = queue.iterator();
-        while (it.hasNext())
-            System.out.println(it.next());
+        for (Object aQueue : queue) System.out.println(aQueue);
     }
 }
 

@@ -10,19 +10,18 @@ import edu.princeton.cs.algs4.MinPQ;
  * @Description:
  * @date 9/03/2018 7:46 PM
  */
-public class Ex30_medianPQ {
+class Ex30_medianPQ {
     //maxPQ用来储存队列中较小的一半的元素
     //minPQ用来储存队列中较大的一半的元素
-    private MaxPQ<Double> maxPQ = new MaxPQ<>();
-    private MinPQ<Double> minPQ = new MinPQ<>();
-    private double median;
+    private final MaxPQ<Double> maxPQ = new MaxPQ<>();
+    private final MinPQ<Double> minPQ = new MinPQ<>();
 
-    public void insert(double d){
+    private void insert(double d){
         if (minPQ.isEmpty()){
             minPQ.insert(d);
             return;
         }
-        median = minPQ.min();
+        double median = minPQ.min();
         if (d >= median)
             minPQ.insert(d);
         if (d < median)
@@ -41,7 +40,7 @@ public class Ex30_medianPQ {
         return minPQ.min();
     }
 
-    public Double delMedian(){
+    private Double delMedian(){
         Double d = minPQ.delMin();
         adjustPQ();
         return d;

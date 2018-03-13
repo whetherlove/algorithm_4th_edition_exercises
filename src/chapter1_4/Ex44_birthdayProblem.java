@@ -11,7 +11,8 @@ import java.util.ArrayList;
  * @Description:
  * @date 6/02/2018 3:43 PM
  */
-public class Ex44_birthdayProblem {
+@SuppressWarnings("InfiniteLoopStatement")
+class Ex44_birthdayProblem {
 
     public static void main(String[] args) {
 

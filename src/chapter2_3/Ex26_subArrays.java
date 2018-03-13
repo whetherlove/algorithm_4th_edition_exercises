@@ -1,12 +1,9 @@
 package chapter2_3;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import edu.princeton.cs.algs4.Insertion;
 import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.stream.Stream;
 
 import static chapter2_3.Quick.partition;
 
@@ -17,17 +14,17 @@ import static chapter2_3.Quick.partition;
  * @Description:
  * @date 1/03/2018 3:23 PM
  */
-public class Ex26_subArrays {
+class Ex26_subArrays {
 
-    private static int M = 10; //20,50;
-    private static int[] subArrays = new int[M+2];
+    private static final int M = 10; //20,50;
+    private static final int[] subArrays = new int[M+2];
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         sort(a, 0, a.length - 1);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi - lo <= M){
             int length = hi - lo + 1;
             if (length > 0)

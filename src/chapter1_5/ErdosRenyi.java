@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @Description:
  * @date 8/02/2018 2:02 PM
  */
-public class ErdosRenyi {
+class ErdosRenyi {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -39,7 +39,7 @@ public class ErdosRenyi {
         System.out.println("2N/N ratio:" + (t2-t1)/(t1-t0));
     }
 
-    public static int count(int N){
+    private static int count(int N){
         //通过更换代码 切换不同UF
         //QuickUnionUF uf = new QuickUnionUF();
         //WeightedQuickUnionUF uf = new WeightedQuickUnionUF();

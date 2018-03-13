@@ -12,9 +12,9 @@ import static chapter2_2.Merge.less;
  * @Description:
  * @date 28/02/2018 11:50 AM
  */
-public class Ex5_2KeySort {
+class Ex5_2KeySort {
     //两主键排序  使用三向切分快排思路 但仅需排一次即可  ~O(N)
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         int lo = 0, hi = a.length-1;
         if (hi <= lo)
             return;

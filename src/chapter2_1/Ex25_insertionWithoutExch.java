@@ -9,9 +9,9 @@ import java.util.Arrays;
  * @Description:
  * @date 24/02/2018 4:25 PM
  */
-public class Ex25_insertionWithoutExch {
+class Ex25_insertionWithoutExch {
 
-    public static void sort(int[] a){
+    private static void sort(int[] a){
         for (int i = 0; i < a.length; i++) {
             int temp = a[i];
             int j = i;

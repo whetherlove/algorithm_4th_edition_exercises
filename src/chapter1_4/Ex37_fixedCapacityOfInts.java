@@ -9,7 +9,8 @@ import edu.princeton.cs.algs4.StdRandom;
  * @Description:
  * @date 6/02/2018 1:06 PM
  */
-public class Ex37_fixedCapacityOfInts {
+@SuppressWarnings("InfiniteLoopStatement")
+class Ex37_fixedCapacityOfInts {
 
     public static void main(String[] args) {
         System.out.println("StackOfInts\tStackOfIntegers\tRatio");
@@ -33,7 +34,7 @@ public class Ex37_fixedCapacityOfInts {
 }
 
 class StackOfInts{
-    protected int[] a;
+    final int[] a;
     private int N = 0;
     StackOfInts(int n){
         a = new int[n];
@@ -47,7 +48,7 @@ class StackOfInts{
 }
 
 class StackOfIntegers{
-    protected Integer[] a;
+    final Integer[] a;
     private int N = 0;
     StackOfIntegers(int n){
         a = new Integer[n];

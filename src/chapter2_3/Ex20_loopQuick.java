@@ -15,19 +15,20 @@ import static chapter2_3.Quick.partition;
  * @Description:
  * @date 1/03/2018 9:10 AM
  */
-public class Ex20_loopQuick {
+class Ex20_loopQuick {
 
     private static class Interval{
-        private int lo;
-        private int hi;
+        private final int lo;
+        private final int hi;
         Interval(int lo, int hi){
             this.lo = lo;
             this.hi = hi;
         }
     }
-    private static Stack<Interval> stack = new Stack();
+    @SuppressWarnings("unchecked")
+    private static final Stack<Interval> stack = new Stack();
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         stack.push(new Interval(0,a.length-1));
         do {

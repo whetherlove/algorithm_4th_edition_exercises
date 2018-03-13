@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @CreateDate: 2018/2/2/002 15:39
  * @UpdateDate: 2018/2/2/002 15:39
  */
-public class Ex14_4sum {
+class Ex14_4sum {
 
     public static void main(String[] args) {
 

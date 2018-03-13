@@ -8,7 +8,7 @@ package chapter1_4;
  * @CreateDate: 2018/2/3/003 15:45
  * @UpdateDate: 2018/2/3/003 15:45
  */
-public class Ex19_localMin2d {
+class Ex19_localMin2d {
 
     public static void main(String[] args) {
 
@@ -27,14 +27,14 @@ public class Ex19_localMin2d {
         System.out.println(localMin(a));
     }
 
-    public static int localMin(int[][] a){
+    private static int localMin(int[][] a){
         int rowLo = 0;
         int rowHi = a.length - 1;
         int colLo = 0;
         int colHi = a.length - 1;
         return localMin(a,rowLo,rowHi,colLo,colHi);
     }
-    public static int localMin(int[][] a, int rowLo, int rowHi, int colLo, int colHi) {
+    private static int localMin(int[][] a, int rowLo, int rowHi, int colLo, int colHi) {
         int rowMid = (rowHi - rowLo) / 2 + rowLo;
         int colMid = (colHi - colLo) / 2 + colLo;
         if (rowMid == rowLo || rowMid == rowHi || colMid == colLo || colMid == colHi)

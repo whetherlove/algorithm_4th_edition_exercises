@@ -1,6 +1,5 @@
 package chapter2_4;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
@@ -11,25 +10,26 @@ import java.util.LinkedList;
  * @Description:
  * @date 6/03/2018 7:17 PM
  */
-public class Ex3_sortedLinkedList<Item extends Comparable<Item>> {
+class Ex3_sortedLinkedList<Item extends Comparable<Item>> {
 
-    private LinkedList<Item> pq = new LinkedList<>();
+    private final LinkedList<Item> pq = new LinkedList<>();
 
-    public void insert(Item v){
+    private void insert(Item v){
         pq.add(v);
-        Collections.sort(pq, Comparator.reverseOrder());
+        pq.sort(Comparator.reverseOrder());
     }
 
-    public Item max(){
+    private Item max(){
         return pq.get(0);
     }
 
-    public Item delMax() {
+    private Item delMax() {
         Item max = max();
         pq.remove(0);
         return max;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Ex3_sortedLinkedList pq = new Ex3_sortedLinkedList();
         pq.insert(2);

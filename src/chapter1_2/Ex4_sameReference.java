@@ -8,7 +8,7 @@ package chapter1_2;
  * @CreateDate: 2018/1/27/027 13:39
  * @UpdateDate: 2018/1/27/027 13:39
  */
-public class Ex4_sameReference {
+class Ex4_sameReference {
 
     public static void main(String[] args) {
 

@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.StdOut;
  * @CreateDate: 2018/1/23/023 13:49
  * @UpdateDate: 2018/1/23/023 13:49
  */
-public class Ex6_loopOfTwo {
+class Ex6_loopOfTwo {
 
     public static void main(String[] args) {
 

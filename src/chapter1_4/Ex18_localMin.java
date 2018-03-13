@@ -8,7 +8,7 @@ package chapter1_4;
  * @CreateDate: 2018/2/2/002 16:44
  * @UpdateDate: 2018/2/2/002 16:44
  */
-public class Ex18_localMin {
+class Ex18_localMin {
 
     public static void main(String[] args) {
 
@@ -22,12 +22,12 @@ public class Ex18_localMin {
         System.out.println(a[localMin(a)]);
     }
 
-    public static int localMin(int[] a){
+    private static int localMin(int[] a){
         int lo = 0;
         int hi = a.length - 1;
         return localMin(a,lo,hi);
     }
-    public static int localMin(int[] a, int lo, int hi) {
+    private static int localMin(int[] a, int lo, int hi) {
         int mid = (hi - lo) / 2 + lo;
         if (mid == lo || mid == hi) return -1;
         else if (a[mid] < a[mid - 1] && a[mid] < a[mid + 1])

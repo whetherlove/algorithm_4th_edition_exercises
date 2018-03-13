@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/24/024 11:45
  * @UpdateDate: 2018/1/24/024 11:45
  */
-public class Ex29_binarySearchWithRankAndCount {
+class Ex29_binarySearchWithRankAndCount {
 
     public static void main(String[] args) {
 
@@ -32,7 +32,7 @@ public class Ex29_binarySearchWithRankAndCount {
         return rank(key,a,lo,hi);
     }
 
-    public static int rank(int key, int[] a, int lo, int hi){
+    private static int rank(int key, int[] a, int lo, int hi){
         int mid = lo + (hi-lo)/2;
         //key可能不属于a，此处不能用key==a[mid]作为条件
         if (key>a[mid] && key<=a[mid+1]) return mid+1;
@@ -41,11 +41,11 @@ public class Ex29_binarySearchWithRankAndCount {
         return 0;
     }
 
-    public static int count(int key, int[] a){
+    private static int count(int key, int[] a){
         return count(key,a,0,a.length-1);
     }
 
-    public static int count(int key, int[] a, int lo, int hi){
+    private static int count(int key, int[] a, int lo, int hi){
         if (lo > hi) {
             System.out.println("lo>hi");
             return 0;

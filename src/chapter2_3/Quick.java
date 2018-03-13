@@ -24,12 +24,12 @@ public class Quick {
 
     private static int subArray2;
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         sort(a, 0, a.length - 1);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi < lo)
             subArray0++;
         if (hi == lo)
@@ -62,6 +62,7 @@ public class Quick {
         return j;
     }
 
+    @SuppressWarnings("unchecked")
     public static boolean less(Comparable v, Comparable w) {
         times++;
         return v.compareTo(w) < 0;
@@ -73,7 +74,7 @@ public class Quick {
             // 初始化测试数组
             Double[] a = Stream.generate(Math::random).limit(N).toArray(Double[]::new);
             sort(a);
-            System.out.println("CN:" + times + " 2NlnN:" + (int) 2 * N * Math.log(N));
+            System.out.println("CN:" + times + " 2NlnN:" + 2 * N * Math.log(N));
             times = 0;
         }
         System.out.println();

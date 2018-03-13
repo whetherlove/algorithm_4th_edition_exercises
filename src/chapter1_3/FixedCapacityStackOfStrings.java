@@ -1,8 +1,5 @@
 package chapter1_3;
 
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
-
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: chapter1_3
@@ -11,9 +8,9 @@ import edu.princeton.cs.algs4.StdOut;
  * @CreateDate: 2018/1/28/028 11:39
  * @UpdateDate: 2018/1/28/028 11:39
  */
-public class FixedCapacityStackOfStrings {
+class FixedCapacityStackOfStrings {
 
-    private String[] a; // stack entries
+    private final String[] a; // stack entries
     private int N; // size
 
     public FixedCapacityStackOfStrings(int cap) {

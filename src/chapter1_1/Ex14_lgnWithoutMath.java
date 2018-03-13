@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/23/023 16:16
  * @UpdateDate: 2018/1/23/023 16:16
  */
-public class Ex14_lgnWithoutMath {
+class Ex14_lgnWithoutMath {
 
     public static void main(String[] args) {
 
@@ -16,7 +16,7 @@ public class Ex14_lgnWithoutMath {
         System.out.println(lg(N));
     }
 
-    public static int lg(int N){
+    private static int lg(int N){
         int result = 0;
         while(result * result <= N){
             result++;

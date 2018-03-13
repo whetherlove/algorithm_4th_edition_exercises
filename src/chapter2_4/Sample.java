@@ -11,10 +11,10 @@ import java.util.Arrays;
  * @Description:
  * @date 12/03/2018 3:33 PM
  */
-public class Sample {
+class Sample {
 
-    private double[] p;
-    private double[] subT;
+    private final double[] p;
+    private final double[] subT;
     private double T;
 
     public Sample(double[] p){

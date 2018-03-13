@@ -1,7 +1,5 @@
 package chapter1_4;
 
-import java.util.Arrays;
-
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: chapter1_4
@@ -10,7 +8,7 @@ import java.util.Arrays;
  * @CreateDate: 2018/2/2/002 14:54
  * @UpdateDate: 2018/2/2/002 14:54
  */
-public class Ex12_commonElements {
+class Ex12_commonElements {
 
     public static void main(String[] args) {
         //test commonElements = 3,4,5,7,10
@@ -30,7 +28,6 @@ public class Ex12_commonElements {
             }
             if (a[i] > b[j]){
                 j++;
-                continue;
             }
         }
 

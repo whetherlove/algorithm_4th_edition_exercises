@@ -8,7 +8,7 @@ package chapter1_2;
  * @CreateDate: 2018/1/27/027 17:27
  * @UpdateDate: 2018/1/27/027 17:27
  */
-public class Ex15_readInts {
+class Ex15_readInts {
 
     public static void main(String[] args) {
         String s = "1 2 3";
@@ -17,7 +17,7 @@ public class Ex15_readInts {
             System.out.println(i);
     }
 
-    public static int[] readInts(String s){
+    private static int[] readInts(String s){
         String[] words = s.split(" ");
         int[] ints = new int[words.length];
         for (int i=0;i<ints.length;i++)

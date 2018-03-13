@@ -3,8 +3,6 @@ package chapter2_3;
 import edu.princeton.cs.algs4.Insertion;
 import edu.princeton.cs.algs4.StdRandom;
 
-import java.util.ArrayList;
-
 import static chapter2_3.Quick.partition;
 
 /**
@@ -14,18 +12,18 @@ import static chapter2_3.Quick.partition;
  * @Description:
  * @date 1/03/2018 3:48 PM
  */
-public class Ex27_ignoreSmallSubarrays {
+class Ex27_ignoreSmallSubarrays {
 
 
     private static int M;
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         sort(a, 0, a.length - 1);
         Insertion.sort(a);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi - lo <= M){
             return;
         }

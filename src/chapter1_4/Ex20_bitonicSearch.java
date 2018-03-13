@@ -7,7 +7,7 @@ package chapter1_4;
  * @Description:
  * @date 4/02/2018 7:13 PM
  */
-public class Ex20_bitonicSearch {
+class Ex20_bitonicSearch {
 
     public static void main(String[] args) {
 
@@ -17,12 +17,12 @@ public class Ex20_bitonicSearch {
         System.out.println(bitonicSearch(a,0));
     }
     //寻找最大值 ~lgN
-    public static int findPeak(int[] a){
+    private static int findPeak(int[] a){
         int lo = 0;
         int hi = a.length - 1;
         return findPeak(a, lo, hi);
     }
-    public static int findPeak(int[] a, int lo, int hi){
+    private static int findPeak(int[] a, int lo, int hi){
         int mid = (hi - lo) / 2 + lo;
         if (mid == 0 || mid == a.length)
             return -1;
@@ -34,7 +34,7 @@ public class Ex20_bitonicSearch {
             return findPeak(a,lo,mid-1);
     }
     //以最大值为界将数组分为两个单调数组，分别使用二分法，~2lgN
-    public static int bsLeft(int[] a, int key, int lo, int hi){
+    private static int bsLeft(int[] a, int key, int lo, int hi){
         if (lo > hi) return -1;
         int mid = (hi - lo) / 2 + lo;
         if (a[mid] == key)
@@ -45,7 +45,7 @@ public class Ex20_bitonicSearch {
             return bsLeft(a,key,mid+1,hi);
         return -1;
     }
-    public static int bsRight(int[] a, int key, int lo, int hi){
+    private static int bsRight(int[] a, int key, int lo, int hi){
         if (lo > hi) return -1;
         int mid = (hi - lo) / 2 + lo;
         if (a[mid] == key)
@@ -57,10 +57,8 @@ public class Ex20_bitonicSearch {
         return -1;
     }
     //合并以上方法
-    public static boolean bitonicSearch(int[] a, int key){
+    private static boolean bitonicSearch(int[] a, int key){
         int peak = findPeak(a);
-        if (bsLeft(a,key,0,peak) != -1 || bsRight(a,key,peak,a.length-1) != -1)
-            return true;
-        return false;
+        return bsLeft(a, key, 0, peak) != -1 || bsRight(a, key, peak, a.length - 1) != -1;
     }
 }

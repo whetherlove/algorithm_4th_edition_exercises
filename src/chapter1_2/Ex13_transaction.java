@@ -12,6 +12,7 @@ import edu.princeton.cs.algs4.In;
  * @CreateDate: 2018/1/27/027 16:28
  * @UpdateDate: 2018/1/27/027 16:28
  */
+@SuppressWarnings("EmptyMethod")
 public class Ex13_transaction implements Comparable<Ex13_transaction>{
 
     final private String who;
@@ -24,7 +25,7 @@ public class Ex13_transaction implements Comparable<Ex13_transaction>{
         amount = a;
     }
 
-    Ex13_transaction(String s){
+    private Ex13_transaction(String s){
         String[] data = s.split(" ");
         who = data[0];
         when = new Date(data[1]);

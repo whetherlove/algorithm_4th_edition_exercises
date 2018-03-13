@@ -10,13 +10,14 @@ import java.util.NoSuchElementException;
  * @CreateDate: 2018/1/29/029 10:09
  * @UpdateDate: 2018/1/29/029 10:09
  */
+@SuppressWarnings("Duplicates")
 public class Ex32_steque<Item> {
 
     private Node first;
     private Node last;
     private int N = 0;
     private class Node{
-        Item item;
+        final Item item;
         Node next;
         Node(Item i){
             item = i;

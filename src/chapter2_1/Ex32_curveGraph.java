@@ -15,9 +15,9 @@ import static java.util.Arrays.sort;
  * @Description:
  * @date 24/02/2018 4:50 PM
  */
-public class Ex32_curveGraph {
+class Ex32_curveGraph {
 
-    public static void init(){
+    private static void init(){
         StdDraw.setCanvasSize(1000,500);
         StdDraw.setPenColor(StdDraw.BLACK);
         StdDraw.setPenRadius(0.005);
@@ -27,9 +27,9 @@ public class Ex32_curveGraph {
         StdDraw.setPenRadius(0.03);
     }
 
-    public static void draw(ArrayList<Point2D> points){
-        double min = points.stream().map(p -> p.y()).min(Comparator.comparing(num -> num)).get();
-        double max = points.stream().map(p -> p.y()).max(Comparator.comparing(num -> num)).get();
+    private static void draw(ArrayList<Point2D> points){
+        double min = points.stream().map(Point2D::y).min(Comparator.comparing(num -> num)).get();
+        double max = points.stream().map(Point2D::y).max(Comparator.comparing(num -> num)).get();
         points.stream()
                 .map(p -> new Point2D(p.x(),uniformY(p.y(),max,min)))
                 .forEach(p -> StdDraw.point(p.x(),p.y()));
@@ -43,7 +43,7 @@ public class Ex32_curveGraph {
 
     }
     //将所有点的纵坐标map到0.5-0.95之间 令f(y) = ay + b
-    public static double uniformY(double y, double max, double min){
+    private static double uniformY(double y, double max, double min){
         double a = 0.9 / (max - min);
         double b = 0.95 - max*a;
         return a*y + b;

@@ -9,9 +9,9 @@ import edu.princeton.cs.algs4.Queue;
  * @Description:
  * @date 8/03/2018 5:26 PM
  */
-public class Ex24_binaryTree<Item extends Comparable<Item>> {
+class Ex24_binaryTree<Item extends Comparable<Item>> {
 
-    private Node root = new Node();
+    private final Node root = new Node();
 
     private class Node {
         private Item value;
@@ -36,7 +36,8 @@ public class Ex24_binaryTree<Item extends Comparable<Item>> {
         }
     }
 
-    public void insert(Item item) {
+    @SuppressWarnings("unchecked")
+    void insert(Item item) {
         if (root.value == null) {
             root.value = item;
             return;
@@ -67,7 +68,7 @@ public class Ex24_binaryTree<Item extends Comparable<Item>> {
      * 将新插入的节点不断与父节点比较，若大于父节点，则交换值
      * @param node
      */
-    public void swim(Node node){
+    private void swim(Node node){
         while (node.parent != null && node.value.compareTo(node.parent.value) > 0){
             Item temp = node.value;
             node.value = node.parent.value;
@@ -76,11 +77,12 @@ public class Ex24_binaryTree<Item extends Comparable<Item>> {
         }
     }
 
-    public Item max(){
+    private Item max(){
         return root.value;
     }
 
-    public Item delMax(){
+    @SuppressWarnings("unchecked")
+    Item delMax(){
         Item max = max();
         Node last = root;
         Queue<Node> queue = new Queue();
@@ -114,7 +116,7 @@ public class Ex24_binaryTree<Item extends Comparable<Item>> {
         return max;
     }
 
-    public void sink(){
+    private void sink(){
         Node current = root;
         while (true){
             //若current没有子节点，结束sink

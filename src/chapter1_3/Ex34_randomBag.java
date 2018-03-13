@@ -12,10 +12,11 @@ import java.util.*;
  */
 public class Ex34_randomBag<Item> implements Iterable<Item>{
 
-    protected int size = 0;
-    protected Item[] items = (Item[]) new Object[1];
+    int size = 0;
+    @SuppressWarnings("unchecked")
+    Item[] items = (Item[]) new Object[1];
 
-    public boolean isEmpty(){
+    private boolean isEmpty(){
         return size == 0;
     }
 
@@ -30,10 +31,10 @@ public class Ex34_randomBag<Item> implements Iterable<Item>{
         items[size++] = item;
     }
 
-    public void resize(int max) {
+    @SuppressWarnings("unchecked")
+    private void resize(int max) {
         Item[] temp = (Item[]) new Object[max];
-        for (int i = 0; i < size; i++)
-            temp[i] = items[i];
+        System.arraycopy(items, 0, temp, 0, size);
         items = temp;
     }
 
@@ -45,7 +46,7 @@ public class Ex34_randomBag<Item> implements Iterable<Item>{
 
     private class bagItr implements Iterator<Item>{
         private int N = size;
-        private Item[] a = items;
+        private final Item[] a = items;
         @Override
         public boolean hasNext() {
             return N-- != 0;
@@ -60,22 +61,20 @@ public class Ex34_randomBag<Item> implements Iterable<Item>{
 
         private void shuffle(Item[] a){
             ArrayList<Item> temp = new ArrayList<>();
-            for (int i=0;i<N;i++)
-                temp.add(a[i]);
+            temp.addAll(Arrays.asList(a).subList(0, N));
             Collections.shuffle(temp);
             for (int i=0;i<N;i++)
                 a[i] = temp.get(i);
         }
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Ex34_randomBag<Integer> bag = new Ex34_randomBag();
         for (int i=0;i<10;i++)
             bag.add(i);
         System.out.println(bag.size());
-        Iterator it = bag.iterator();
-        while (it.hasNext())
-            System.out.println(it.next());
+        for (Object aBag : bag) System.out.println(aBag);
         System.out.println(bag.size());
     }
 }

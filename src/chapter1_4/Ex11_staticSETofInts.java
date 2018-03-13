@@ -10,13 +10,13 @@ import java.util.Arrays;
  * @CreateDate: 2018/2/2/002 14:37
  * @UpdateDate: 2018/2/2/002 14:37
  */
-public class Ex11_staticSETofInts {
+@SuppressWarnings("SameParameterValue")
+class Ex11_staticSETofInts {
 
-    private int[] a;
-    public Ex11_staticSETofInts(int[] keys){
+    private final int[] a;
+    private Ex11_staticSETofInts(int[] keys){
         a = new int[keys.length];
-        for (int i=0;i<keys.length;i++)
-            a[i] = keys[i];              //保护性复制
+        System.arraycopy(keys, 0, a, 0, keys.length);
         Arrays.sort(a);
     }
 
@@ -24,7 +24,7 @@ public class Ex11_staticSETofInts {
         return rank(key) != -1;
     }
 
-    public int rank(int key){
+    private int rank(int key){
         int lo = 0;
         int hi = a.length - 1;
         while (lo <= hi){
@@ -39,14 +39,14 @@ public class Ex11_staticSETofInts {
         return -1;
     }
 
-    public int howMany(int key){
+    private int howMany(int key){
         return rankHi(key) - rankLo(key) + 1;
      }
 
-    public  int rankLo(int key){
+    private int rankLo(int key){
         return rankLo(key,0,a.length-1);
     }
-    public  int rankLo(int key, int lo, int hi){
+    private int rankLo(int key, int lo, int hi){
         if (lo > hi) return -1;
         int mid = lo + (hi - lo) / 2;
         if (key < a[mid]) return rankLo(key,lo,mid-1);
@@ -55,10 +55,10 @@ public class Ex11_staticSETofInts {
             return rankLo(key,lo,mid-1) == -1 ? mid : rankLo(key,lo,mid-1);
     }
 
-    public int rankHi(int key){
+    private int rankHi(int key){
         return rankHi(key,0,a.length-1);
     }
-    public int rankHi(int key, int lo, int hi){
+    private int rankHi(int key, int lo, int hi){
         if (lo > hi) return -1;
         int mid = lo + (hi - lo) / 2;
         if (key < a[mid]) return rankHi(key,lo,mid-1);

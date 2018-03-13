@@ -15,9 +15,9 @@ import static chapter2_2.Merge.less;
  * @Description:
  * @date 28/02/2018 5:24 PM
  */
-public class Ex17_quickWithSentry {
+class Ex17_quickWithSentry {
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         //将数组中最大的元素置于数组最右端
         Comparable max = Arrays.stream(a).reduce((c1,c2) -> less(c1,c2)?c2:c1).get();
@@ -27,7 +27,7 @@ public class Ex17_quickWithSentry {
         sort(a, 0, a.length - 1);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo)
             return;
         int j = partition(a, lo, hi);
@@ -36,7 +36,7 @@ public class Ex17_quickWithSentry {
         sort(a, j + 1, Math.min(hi+1,a.length-1));
     }
 
-    public static int partition(Comparable[] a, int lo, int hi) {
+    private static int partition(Comparable[] a, int lo, int hi) {
         int i = lo, j = hi + 1;
         Comparable v = a[lo];
         while (true) {

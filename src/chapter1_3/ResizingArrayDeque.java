@@ -8,9 +8,10 @@ package chapter1_3;
  * @CreateDate: 2018/1/29/029 11:10
  * @UpdateDate: 2018/1/29/029 11:10
  */
-public class ResizingArrayDeque<Item> extends ResizingArrayStack<Item>{
+@SuppressWarnings("SameParameterValue")
+class ResizingArrayDeque<Item> extends ResizingArrayStack<Item>{
 
-        public void pushLeft(Item item){
+        void pushLeft(Item item){
             if (N == a.length) {
                 resize(2 * a.length);
             }
@@ -20,11 +21,10 @@ public class ResizingArrayDeque<Item> extends ResizingArrayStack<Item>{
             N++;
         }
 
-        public Item popLeft(){
+        Item popLeft(){
             Item item = a[0];
             //将弹出的对象设为null,避免对象游离
-            for (int i=0;i<N-1;i++)
-                a[i] = a[i+1];
+            System.arraycopy(a, 1, a, 0, N - 1);
             a[N-1] = null;
             if (N > 0 && N == a.length / 4) {
                 resize(a.length / 2);
@@ -33,12 +33,12 @@ public class ResizingArrayDeque<Item> extends ResizingArrayStack<Item>{
             return item;
         }
 
-        public void pushRight(Item item){
+        void pushRight(Item item){
             push(item);
         }
 
-        public Item popRight(){
-            return (Item) pop();
+        Item popRight(){
+            return pop();
         }
 
     public static void main(String[] args) {

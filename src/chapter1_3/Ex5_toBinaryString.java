@@ -10,14 +10,15 @@ import edu.princeton.cs.algs4.Stack;
  * @CreateDate: 2018/1/28/028 12:27
  * @UpdateDate: 2018/1/28/028 12:27
  */
-public class Ex5_toBinaryString {
+@SuppressWarnings("SameParameterValue")
+class Ex5_toBinaryString {
 
     public static void main(String[] args) {
 
         toBinary(50);
     }
 
-    public static void toBinary(int n){
+    private static void toBinary(int n){
         Stack<Integer> stack = new Stack<>();
         while (n>0){
             stack.push(n%2);

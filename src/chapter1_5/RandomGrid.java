@@ -13,9 +13,9 @@ import java.util.*;
  * @Description:
  * @date 9/02/2018 9:53 AM
  */
-public class RandomGrid {
+class RandomGrid {
 
-    public static Connection[] generate(int N){
+    private static Connection[] generate(int N){
         Ex34_randomBag<Connection> bag = new Ex34_randomBag<>();
         //生成横向连接
         for (int i=1;i<N*N;i+=N) {
@@ -73,8 +73,8 @@ public class RandomGrid {
 }
 
 class Connection{
-    int p;
-    int q;
+    final int p;
+    final int q;
     public Connection(int p, int q){
         this.p = p;
         this.q = q;

@@ -1,7 +1,5 @@
 package chapter1_1;
 
-import java.util.stream.Stream;
-
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: chapter1_1
@@ -10,7 +8,7 @@ import java.util.stream.Stream;
  * @CreateDate: 2018/1/23/023 15:52
  * @UpdateDate: 2018/1/23/023 15:52
  */
-public class Ex13_arrayTranspose {
+class Ex13_arrayTranspose {
 
     public static void main(String[] args) {
 
@@ -20,12 +18,12 @@ public class Ex13_arrayTranspose {
 
         int[][] transArray = transposition(array);
 
-        for (int i=0;i<transArray.length;i++)
-            for (int j=0;j<transArray[0].length;j++)
-                System.out.println(transArray[i][j] + " ");
+        for (int[] aTransArray : transArray)
+            for (int j = 0; j < transArray[0].length; j++)
+                System.out.println(aTransArray[j] + " ");
     }
 
-    public static int[][] transposition(int[][] array){
+    private static int[][] transposition(int[][] array){
 
         int[][] a = new int[array[0].length][array.length];
 

@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.Stack;
  * @CreateDate: 2018/1/28/028 12:44
  * @UpdateDate: 2018/1/28/028 12:44
  */
-public class Ex9_repairExpression {
+class Ex9_repairExpression {
 
     public static void main(String[] args) {
 
@@ -18,27 +18,26 @@ public class Ex9_repairExpression {
         System.out.println(repair(test));
     }
 
-    public static String repair(String e){
+    private static String repair(String e){
         //仿Dijkstra法
         Stack<String> ops = new Stack<>();
         Stack<String> vals = new Stack<>();
         String[] elems = e.split(" ");
         String availableOp = "+-*/";
 
-        for (int i=0;i<elems.length;i++){
+        for (String elem : elems) {
             //用4个判断语句写的太累，此处直接调用indexOf方法
-            if (availableOp.indexOf(elems[i]) > -1)
-                ops.push(elems[i]);
-            else if (elems[i].equals(")")){
+            if (availableOp.contains(elem))
+                ops.push(elem);
+            else if (elem.equals(")")) {
                 String op = ops.pop();
                 //exp: val1 op val2
                 String val2 = vals.pop();
                 String val1 = vals.pop();
                 //不需要运算,而是将一串整合字符串作为新操作数存入
-                vals.push("( " + val1 + " " + op + " " + val2 + " )" );
-            }
-            else
-                vals.push(elems[i]);
+                vals.push("( " + val1 + " " + op + " " + val2 + " )");
+            } else
+                vals.push(elem);
         }
         return vals.pop();
     }

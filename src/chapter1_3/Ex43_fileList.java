@@ -4,7 +4,6 @@ import edu.princeton.cs.algs4.StdOut;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 /**
  * @ProjectName: algorithm_4th_edition_exercises
@@ -14,18 +13,18 @@ import java.util.Scanner;
  * @CreateDate: 2018/1/30/030 15:19
  * @UpdateDate: 2018/1/30/030 15:19
  */
-public class Ex43_fileList {
+class Ex43_fileList {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         String path = "E:\\code\\intelliJ\\algorithm_4th_edition_exercises";
         fileList(path);
     }
 
-    public static void fileList(String filePath){
+    private static void fileList(String filePath){
         File file = new File(filePath);
         fileList(file,0);
     }
-    public static void fileList(File file, int depth){
+    private static void fileList(File file, int depth){
         File[] fileList = file.listFiles();
         for (File f : fileList){
             for(int i=0;i<depth;i++) StdOut.print("\t");

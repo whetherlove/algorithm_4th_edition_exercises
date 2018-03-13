@@ -13,7 +13,8 @@ import java.util.Collections;
  * @CreateDate: 2018/1/24/024 17:10
  * @UpdateDate: 2018/1/24/024 17:10
  */
-public class Ex36_shuffleTest {
+@SuppressWarnings("Duplicates")
+class Ex36_shuffleTest {
 
     public static void main(String[] args) {
 
@@ -43,12 +44,12 @@ public class Ex36_shuffleTest {
         }
     }
 
-    public static void init(int[] a){
+    private static void init(int[] a){
         for (int i=0;i<a.length;i++){
             a[i] = i;
         }
     }
-    public static void shuffle(int[] a){
+    private static void shuffle(int[] a){
         ArrayList<Integer> temp = new ArrayList<>();
         for (int i: a)
             temp.add(i);

@@ -11,7 +11,8 @@ import edu.princeton.cs.algs4.StdRandom;
  * @CreateDate: 2018/1/31/031 15:29
  * @UpdateDate: 2018/1/31/031 15:29
  */
-public class DoublingTest {
+@SuppressWarnings("InfiniteLoopStatement")
+class DoublingTest {
 
     public static double timeTrial(int N){
         int MAX = 1000000;
@@ -24,6 +25,7 @@ public class DoublingTest {
     }
 
     public static void main(String[] args) {
+        //noinspection InfiniteLoopStatement
         for (int N = 250;;N += N){
             double time = timeTrial(N);
             StdOut.printf("%7d %5.1f\n", N,time);

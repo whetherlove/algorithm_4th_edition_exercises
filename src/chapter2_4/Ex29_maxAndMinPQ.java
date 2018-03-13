@@ -10,19 +10,19 @@ import edu.princeton.cs.algs4.MaxPQ;
  * @Description:
  * @date 9/03/2018 7:38 PM
  */
-public class Ex29_maxAndMinPQ<Item extends Comparable<Item>> {
+class Ex29_maxAndMinPQ<Item extends Comparable<Item>> {
 
-    private MinPQ<Item> minPQ = new MinPQ<>();
-    private MaxPQ<Item> maxPQ = new MaxPQ<>();
+    private final MinPQ<Item> minPQ = new MinPQ<>();
+    private final MaxPQ<Item> maxPQ = new MaxPQ<>();
     private int size = 0;
 
-    public void insert(Item item){
+    private void insert(Item item){
         size++;
         minPQ.insert(item);
         maxPQ.insert(item);
     }
 
-    public Item delMax(){
+    private Item delMax(){
         if (size > 0) {
             size--;
             return maxPQ.delMax();
@@ -30,7 +30,7 @@ public class Ex29_maxAndMinPQ<Item extends Comparable<Item>> {
         return null;
     }
 
-    public Item delMin(){
+    private Item delMin(){
         if (size > 0) {
             size--;
             return minPQ.delMin();
@@ -50,6 +50,7 @@ public class Ex29_maxAndMinPQ<Item extends Comparable<Item>> {
         return null;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Ex29_maxAndMinPQ pq = new Ex29_maxAndMinPQ();
         for (int i = 0; i < 10; i++) {

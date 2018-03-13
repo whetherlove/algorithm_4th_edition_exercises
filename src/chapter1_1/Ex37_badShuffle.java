@@ -3,9 +3,6 @@ package chapter1_1;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdRandom;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: chapter1_1
@@ -14,7 +11,8 @@ import java.util.Collections;
  * @CreateDate: 2018/1/27/027 8:50
  * @UpdateDate: 2018/1/27/027 8:50
  */
-public class Ex37_badShuffle {
+@SuppressWarnings("Duplicates")
+class Ex37_badShuffle {
 
     public static void main(String[] args) {
 
@@ -44,12 +42,12 @@ public class Ex37_badShuffle {
         }
     }
 
-    public static void init(int[] a){
+    private static void init(int[] a){
         for (int i=0;i<a.length;i++){
             a[i] = i;
         }
     }
-    public static void badShuffle(int[] a){
+    private static void badShuffle(int[] a){
         for (int i=0;i<a.length;i++){
             int pos = StdRandom.uniform(a.length);
             int temp = a[i];

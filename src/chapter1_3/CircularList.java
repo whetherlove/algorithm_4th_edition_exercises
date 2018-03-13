@@ -1,7 +1,5 @@
 package chapter1_3;
 
-import java.util.Iterator;
-
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: chapter1_3
@@ -10,13 +8,13 @@ import java.util.Iterator;
  * @CreateDate: 2018/1/29/029 16:50
  * @UpdateDate: 2018/1/29/029 16:50
  */
-public class CircularList<Item> {
+class CircularList<Item> {
 
     private Node last;
     private Node first;
     private Node current;
     private class Node{
-        Item item;
+        final Item item;
         Node next;
         Node(Item i){
             item = i;
@@ -94,11 +92,11 @@ public class CircularList<Item> {
     public String toString(){
         if (first == null) return null;
         Node current = first;
-        String string = "";
+        StringBuilder string = new StringBuilder();
         do {
-            string += current.toString();
+            string.append(current.toString());
             current = current.next;
         }while (current != first);
-        return string;
+        return string.toString();
     }
 }

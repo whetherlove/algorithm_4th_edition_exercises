@@ -11,7 +11,7 @@ import java.util.Iterator;
  * @CreateDate: 2018/1/28/028 15:05
  * @UpdateDate: 2018/1/28/028 15:05
  */
-public class Ex12_iterableStack<Item> implements Iterable<Item>{
+class Ex12_iterableStack<Item> implements Iterable<Object> {
 
     private Node first;
     private int N;
@@ -28,7 +28,7 @@ public class Ex12_iterableStack<Item> implements Iterable<Item>{
         return N;
     }
 
-    public void push(Item item){
+    void push(Item item){
         Node oldFirst = first;
         first = new Node();
         first.item = item;
@@ -44,7 +44,8 @@ public class Ex12_iterableStack<Item> implements Iterable<Item>{
     }
     //Ex50
     @Override
-    public Iterator<Item> iterator() {
+    public Iterator<Object> iterator() {
+        //noinspection unchecked
         return new StackItr();
     }
 

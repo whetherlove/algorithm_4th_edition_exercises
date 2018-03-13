@@ -8,32 +8,31 @@ package chapter1_3;
  * @CreateDate: 2018/1/30/030 14:25
  * @UpdateDate: 2018/1/30/030 14:25
  */
-public class Ex39_ringBuffer<Item> {
+class Ex39_ringBuffer<Item> {
 
     private final int MAX = 100;
-    private Item[] buffer = (Item[]) new Object[MAX];
+    @SuppressWarnings("unchecked")
+    private final Item[] buffer = (Item[]) new Object[MAX];
     private int tail = 0;
 
-    public void write(Item item){
+    void write(Item item){
         if (tail == MAX)
             System.out.println("The ring buffer is currently full.");
         else buffer[tail++] = item;
     }
 
-    public Item read(){
+    Item read(){
         if (tail == 0){
             System.out.println("The ring buffer is currently empty.");
             return null;
         }
         Item item = buffer[0];
-        for (int i=0;i<tail;i++){
-            buffer[i] = buffer[i+1];
-        }
+        System.arraycopy(buffer, 1, buffer, 0, tail);
         tail--;
         return item;
     }
 
-    public int size(){
+    int size(){
         return tail;
     }
 

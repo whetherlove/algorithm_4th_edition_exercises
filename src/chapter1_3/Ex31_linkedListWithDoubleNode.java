@@ -8,7 +8,7 @@ package chapter1_3;
  * @CreateDate: 2018/1/29/029 8:31
  * @UpdateDate: 2018/1/29/029 8:31
  */
-public class Ex31_linkedListWithDoubleNode<Item> {
+class Ex31_linkedListWithDoubleNode<Item> {
 
     private DoubleNode first;
     private int N = 0;
@@ -18,7 +18,7 @@ public class Ex31_linkedListWithDoubleNode<Item> {
         DoubleNode next;
     }
 
-    public void insertFirst(DoubleNode n){
+    void insertFirst(DoubleNode n){
         if (N == 0) first = n;
         else {
             n.next = first;
@@ -27,7 +27,7 @@ public class Ex31_linkedListWithDoubleNode<Item> {
         N++;
     }
 
-    public void insertLast(DoubleNode n){
+    void insertLast(DoubleNode n){
         if (N == 0) first = n;
         else {
             DoubleNode current = first;
@@ -39,7 +39,7 @@ public class Ex31_linkedListWithDoubleNode<Item> {
         N++;
     }
 
-    public void deleteFirst(){
+    private void deleteFirst(){
         if (N == 1) first = null;
         else {
             first.next.previous = null;
@@ -48,7 +48,7 @@ public class Ex31_linkedListWithDoubleNode<Item> {
         N--;
     }
 
-    public void deleteLast(){
+    private void deleteLast(){
         if (N == 1) first = null;
         else if (N == 2) {
             first.next.previous = null;
@@ -64,7 +64,7 @@ public class Ex31_linkedListWithDoubleNode<Item> {
         N--;
     }
     //默认t存在于该链表中,n为将要添加的节点
-    public void insertBefore(DoubleNode t, DoubleNode n){
+    void insertBefore(DoubleNode t, DoubleNode n){
         if (first == t){
             n.next = t;
             t.previous = n;
@@ -93,7 +93,7 @@ public class Ex31_linkedListWithDoubleNode<Item> {
         N++;
     }
     //默认n存在于该链表中
-    public void delete(DoubleNode n){
+    void delete(DoubleNode n){
         if (N == 1) first = null;
         else if (n.previous == null)
             deleteFirst();
@@ -107,7 +107,7 @@ public class Ex31_linkedListWithDoubleNode<Item> {
         N--;
     }
 
-    public int size(){
+    int size(){
         return N;
     }
 

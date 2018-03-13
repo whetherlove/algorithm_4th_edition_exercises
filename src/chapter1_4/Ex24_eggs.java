@@ -7,25 +7,28 @@ package chapter1_4;
  * @Description:
  * @date 5/02/2018 12:16 PM
  */
-public class Ex24_eggs {
+class Ex24_eggs {
 
-    public static int findFLgN(boolean[] floors){
+    private static int findFLgN(boolean[] floors){
         int lo = 0;
         int hi = floors.length - 1;
         while (lo < hi){
             int mid = (hi - lo) / 2 + lo;
+            //noinspection PointlessBooleanExpression
             if (floors[mid] == false)
                 lo = mid + 1;
             else {
                 hi = mid;
             }
         }
+        //noinspection PointlessBooleanExpression
         return floors[hi] == true ? hi : -1;
     }
 
-    public static int findF2LgF(boolean[] floors){
+    private static int findF2LgF(boolean[] floors){
         //~lgF
         int f = 1;
+        //noinspection PointlessBooleanExpression
         while (f < floors.length && floors[f-1] != true)
                 f *= 2;
         //lgF
@@ -33,25 +36,29 @@ public class Ex24_eggs {
         int hi = Math.min(f-1,floors.length-1);
         while (lo < hi){
             int mid = (hi - lo) / 2 + lo;
+            //noinspection PointlessBooleanExpression
             if (floors[mid] == false)
                 lo = mid + 1;
             else {
                 hi = mid;
             }
         }
+        //noinspection PointlessBooleanExpression
         return floors[hi] == true ? hi : -1;
     }
     //Ex25 2 eggs ~2sqrt(N)
-    public static int findFSqrtN(boolean[] floors){
+    private static int findFSqrtN(boolean[] floors){
         //sqrt(N)
         int sqrtN = (int)Math.sqrt(floors.length);
         int f = 0;
+        //noinspection PointlessBooleanExpression
         while (f < floors.length && floors[f] != true)
             f += sqrtN;
         //sqrt(N)
         int lo = Math.max(f - sqrtN, 0);
         int hi = Math.min(f,floors.length-1);
         for (int i=lo;i<=hi;i++){
+            //noinspection PointlessBooleanExpression
             if (floors[i] == true)
                 return i;
         }
@@ -73,9 +80,10 @@ public class Ex24_eggs {
     //令c = 16， 有4(n-1)n < (2n-1)^2 < 4n(n+1)
     //即 n + f(n）- f(n-1) - 1 ~ csqrt(F)
     //若要求c尽量小，可令f(n) = 4n(n+1) 则c = 1
-    public static int findFSqrtF(boolean[] floors){
+    private static int findFSqrtF(boolean[] floors){
         int N = 1;
         int f = (1 + N) * N / 2 - 1;
+        //noinspection PointlessBooleanExpression
         while (f < floors.length && floors[f] != true){
             N++;
             f = (1 + N) * N / 2 - 1;
@@ -83,6 +91,7 @@ public class Ex24_eggs {
         int lo = Math.max(N * (N - 1) / 2, 0);
         int hi = Math.min(f,floors.length-1);
         for (int i=lo;i<=hi;i++){
+            //noinspection PointlessBooleanExpression
             if (floors[i] == true)
                 return i;
         }

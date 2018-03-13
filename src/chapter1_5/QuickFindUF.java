@@ -1,8 +1,5 @@
 package chapter1_5;
 
-import edu.princeton.cs.algs4.Point2D;
-import edu.princeton.cs.algs4.StdDraw;
-
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -13,9 +10,10 @@ import java.util.HashMap;
  * @Description:
  * @date 6/02/2018 4:44 PM
  */
-public class QuickFindUF {
+@SuppressWarnings("Duplicates")
+class QuickFindUF {
 
-    private int[] id;
+    private final int[] id;
     private int count;
     private int times = 0;
 
@@ -34,7 +32,7 @@ public class QuickFindUF {
         return find(p) == find(q);
     }
 
-    public int find(int p){
+    private int find(int p){
         times++;
         return id[p];
     }
@@ -57,12 +55,12 @@ public class QuickFindUF {
         QuickFindUF uf = new QuickFindUF(N);
         HashMap<Integer,Integer> points = new HashMap<>();
         System.out.println(Arrays.toString(uf.id));
-        for (int i = 0; i < input.length; i++) {
+        for (int[] anInput : input) {
             //每次调用union，必调用2次find,若pID != qID, 则额外访问数组N次
             //每次调用find，访问数组次数为1
-            int p = input[i][0];
-            int q = input[i][1];
-            uf.union(p,q);
+            int p = anInput[0];
+            int q = anInput[1];
+            uf.union(p, q);
             System.out.print(Arrays.toString(uf.id));
             System.out.println("\t" + uf.times);
         }

@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/23/023 14:49
  * @UpdateDate: 2018/1/23/023 14:49
  */
-public class Ex8_char {
+class Ex8_char {
 
     public static void main(String[] args) {
 

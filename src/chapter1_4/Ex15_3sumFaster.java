@@ -8,7 +8,7 @@ package chapter1_4;
  * @CreateDate: 2018/2/2/002 15:44
  * @UpdateDate: 2018/2/2/002 15:44
  */
-public class Ex15_3sumFaster {
+class Ex15_3sumFaster {
 
     public static void main(String[] args) {
 
@@ -28,7 +28,6 @@ public class Ex15_3sumFaster {
             }
             if (a[i] + a[j] > 0){
                 j--;
-                continue;
             }
         }
         System.out.println(count);
@@ -49,7 +48,6 @@ public class Ex15_3sumFaster {
                 }
                 if (a[m] + a[n] > -a[k]){
                     n--;
-                    continue;
                 }
             }
         System.out.println(count);

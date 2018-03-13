@@ -1,7 +1,5 @@
 package chapter1_1;
 
-import java.util.ArrayList;
-
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: chapter1_1
@@ -10,7 +8,7 @@ import java.util.ArrayList;
  * @CreateDate: 2018/1/23/023 16:51
  * @UpdateDate: 2018/1/23/023 16:51
  */
-public class Ex19_fibonacci {
+class Ex19_fibonacci {
 
     public static void main(String[] args) {
 
@@ -26,7 +24,7 @@ public class Ex19_fibonacci {
 //        if (N == 1) return 1;
 //        return F(N-1) + F(N-2);
 //    }
-    public static long F(int N){
+    private static long F(int N){
         if (N == 0) return 0;
         if (N == 1) return 1;
         long[] fib = new long[N+1];

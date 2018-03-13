@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.StdIn;
  * @CreateDate: 2018/1/23/023 13:23
  * @UpdateDate: 2018/1/23/023 13:23
  */
-public class Ex3_equalNumbers {
+class Ex3_equalNumbers {
 
     public static void main(String[] args) {
 

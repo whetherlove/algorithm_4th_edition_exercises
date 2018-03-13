@@ -9,9 +9,10 @@ import java.util.Arrays;
  * @Description:
  * @date 27/02/2018 10:08 AM
  */
-public class Ex25_kWayMerge {
+@SuppressWarnings("SameParameterValue")
+class Ex25_kWayMerge {
     //构造一个适用于所有Comparable对象的变量INFINITE，令其比所有Comparable对象排序靠后
-    private static Comparable INFINITE = new Comparable() {
+    private static final Comparable INFINITE = new Comparable() {
         @Override
         public int compareTo(Object o) {
             return 0;
@@ -24,16 +25,13 @@ public class Ex25_kWayMerge {
     };
 
     // 重写less方法，令INFINITE大于任意Comparable对象
-    public static boolean less(Comparable v, Comparable w) {
-        if (v.equals(INFINITE))
-            return false;
-        if (w.equals(INFINITE))
-            return true;
-        return v.compareTo(w) < 0;
+    @SuppressWarnings("unchecked")
+    private static boolean less(Comparable v, Comparable w) {
+        return !v.equals(INFINITE) && (w.equals(INFINITE) || v.compareTo(w) < 0);
     }
 
     // 自底向上k路归并,a为需要排序的数组，k为归并算法每次归并的路数
-    public static void sort(Comparable[] a, int k) {
+    private static void sort(Comparable[] a, int k) {
         int N = a.length;
         for (int size = 1; size < N; size *= k) {
             for (int lo = 0; lo < N - size; lo += size * k) {
@@ -80,7 +78,7 @@ public class Ex25_kWayMerge {
 
     }
 
-    public static Comparable min(Comparable[][] c, int[] pos) {
+    private static Comparable min(Comparable[][] c, int[] pos) {
         Comparable min = c[0][pos[0]];
         for (int i = 0; i < c.length; i++)
             if (less(c[i][pos[i]], min))
@@ -91,6 +89,7 @@ public class Ex25_kWayMerge {
         return min;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Comparable<String>[] a = new Comparable[] { "A", "E", "C", "B", "F" };
         sort(a, 4);

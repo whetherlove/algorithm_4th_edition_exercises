@@ -15,14 +15,15 @@ import static chapter2_2.Merge.less;
  * @Description:
  * @date 28/02/2018 6:12 PM
  */
-public class Ex18_quick3sample {
+@SuppressWarnings("Duplicates")
+class Ex18_quick3sample {
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         sort(a, 0, a.length - 1);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo)
             return;
         int j = partition(a, lo, hi);
@@ -30,7 +31,7 @@ public class Ex18_quick3sample {
         sort(a, j + 1, hi);
     }
 
-    public static int partition(Comparable[] a, int lo, int hi) {
+    private static int partition(Comparable[] a, int lo, int hi) {
         int i = lo, j = hi + 1;
         Comparable v = getMedian(a, lo, hi);
         while (true) {
@@ -48,7 +49,8 @@ public class Ex18_quick3sample {
         return j;
     }
 
-    public static Comparable getMedian(Comparable[] a, int lo, int hi) {
+    @SuppressWarnings("unchecked")
+    private static Comparable getMedian(Comparable[] a, int lo, int hi) {
         int pos1 = StdRandom.uniform(lo, hi + 1);
         int pos2 = StdRandom.uniform(lo, hi + 1);
         int pos3 = StdRandom.uniform(lo, hi + 1);
@@ -72,7 +74,7 @@ public class Ex18_quick3sample {
     }
 
     // Ex19 附加题 少于7次比较找出中位数
-    public static int getMedian(int a, int b, int c, int d, int e){
+    private static int getMedian(int a, int b, int c, int d, int e){
         int temp;
         if (a > b) {
             temp = a;

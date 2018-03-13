@@ -12,7 +12,8 @@ import java.util.Arrays;
  * @CreateDate: 2018/1/24/024 19:15
  * @UpdateDate: 2018/1/24/024 19:15
  */
-public class Ex38_bruteForceSearch {
+@SuppressWarnings("Duplicates")
+class Ex38_bruteForceSearch {
     public static void main(String[] args) {
 
         System.out.println("Enter the key:");
@@ -44,7 +45,7 @@ public class Ex38_bruteForceSearch {
     public static int rank(int key, int[] a){
         return rank(key,a,0,a.length-1);
     }
-    public static int rank(int key, int[] a, int lo, int hi){
+    private static int rank(int key, int[] a, int lo, int hi){
         if (lo > hi) return -1;
         int mid = lo + (hi - lo) / 2;
         if (key < a[mid]) return rank(key,a,lo,mid-1);

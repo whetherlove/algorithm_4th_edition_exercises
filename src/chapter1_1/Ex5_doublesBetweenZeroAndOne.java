@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.StdIn;
  * @CreateDate: 2018/1/23/023 13:42
  * @UpdateDate: 2018/1/23/023 13:42
  */
-public class Ex5_doublesBetweenZeroAndOne {
+class Ex5_doublesBetweenZeroAndOne {
 
     public static void main(String[] args) {
 

@@ -13,13 +13,13 @@ import static chapter2_2.Merge.less;
  */
 public class Ex11_improvedMerge {
 
-    public static void sort(Comparable[] a){
+    private static void sort(Comparable[] a){
         //改进3：将aux作为参数传递
         Comparable[] aux = new Comparable[a.length];
         sort(a,aux,0,a.length-1);
     }
 
-    public static void sort(Comparable[] a, Comparable[] aux, int lo, int hi){
+    private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi){
         if (hi <= lo) return;
         int mid = lo + (hi-lo) / 2;
 
@@ -45,6 +45,7 @@ public class Ex11_improvedMerge {
     }
 
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Comparable<String>[] a = new Comparable[]{"A", "E", "C", "B", "F", "D"};
         sort(a);

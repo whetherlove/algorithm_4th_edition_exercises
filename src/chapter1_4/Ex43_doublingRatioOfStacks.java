@@ -2,8 +2,6 @@ package chapter1_4;
 
 import chapter1_3.ResizingArrayStack;
 import chapter1_3.Stack;
-import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdRandom;
 
 /**
  * @author Jacob Zhang
@@ -12,7 +10,8 @@ import edu.princeton.cs.algs4.StdRandom;
  * @Description:
  * @date 6/02/2018 3:32 PM
  */
-public class Ex43_doublingRatioOfStacks {
+@SuppressWarnings("InfiniteLoopStatement")
+class Ex43_doublingRatioOfStacks {
 
     public static void main(String[] args) {
 

@@ -14,16 +14,16 @@ import static chapter2_3.Quick.partition;
  * @Description:
  * @date 1/03/2018 3:00 PM
  */
-public class Ex25_switchToInsertion {
+class Ex25_switchToInsertion {
 
     private static int M;
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         sort(a, 0, a.length - 1);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi - lo <= M){
             Insertion.sort(a,lo,hi);
             return;

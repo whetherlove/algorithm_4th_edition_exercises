@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/24/024 17:09
  * @UpdateDate: 2018/1/24/024 17:09
  */
-public class Ex35_dice {
+class Ex35_dice {
 
     public static void main(String[] args) {
 
@@ -38,13 +38,13 @@ public class Ex35_dice {
         System.out.println(isAccurate(dist,distInExp));
     }
 
-    public static int sumOfTwo(){
+    private static int sumOfTwo(){
         int a = (int)(Math.random()*5 + 1);
         int b = (int)(Math.random()*5 + 1);
         return a+b;
     }
 
-    public static boolean isAccurate(double[] dist, double[] distInExp){
+    private static boolean isAccurate(double[] dist, double[] distInExp){
         for (int i=0;i<dist.length;i++)
             if (dist[i] - distInExp[i] < 0.001)
                 return true;

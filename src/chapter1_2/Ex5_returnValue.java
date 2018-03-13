@@ -8,7 +8,7 @@ package chapter1_2;
  * @CreateDate: 2018/1/27/027 13:41
  * @UpdateDate: 2018/1/27/027 13:41
  */
-public class Ex5_returnValue {
+class Ex5_returnValue {
 
     public static void main(String[] args) {
 

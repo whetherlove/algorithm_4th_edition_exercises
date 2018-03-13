@@ -8,7 +8,8 @@ package chapter1_1;
  * @CreateDate: 2018/1/23/023 19:14
  * @UpdateDate: 2018/1/23/023 19:14
  */
-public class Ex27_binomial {
+@SuppressWarnings("SameParameterValue")
+class Ex27_binomial {
 
     static int count = 0;
 
@@ -28,7 +29,7 @@ public class Ex27_binomial {
 //        return result;
 //    }
     //使用for代替递归
-    public static double binomial(int n, int k, double p){
+    private static double binomial(int n, int k, double p){
         //pnk[n][k]为n次试验目标事件发生k次的概率
         double[][] pnk = new double[n+1][k+1];
         pnk[0][0] = 1.0;

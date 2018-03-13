@@ -12,12 +12,12 @@ import edu.princeton.cs.algs4.StdOut;
  * @Description:
  * @date 9/03/2018 7:21 PM
  */
-public class Ex28_topM {
+class Ex28_topM {
 
     public static void main(String[] args) {
 
         int M = 10000;
-        MinPQ<Coordinate> minPQ = new MinPQ<Coordinate>(M+1);
+        MinPQ<Coordinate> minPQ = new MinPQ<>(M + 1);
         while (StdIn.hasNextLine()){
             minPQ.insert(new Coordinate(StdIn.readLine()));
             if (minPQ.size() > M)
@@ -32,9 +32,9 @@ public class Ex28_topM {
 }
 
 class Coordinate{
-    private double x;
-    private double y;
-    private double z;
+    private final double x;
+    private final double y;
+    private final double z;
 
     //假设表中输入中每行代表一个坐标，其格式为(x,y,z)
     public Coordinate(String line) {

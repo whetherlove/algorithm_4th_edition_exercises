@@ -8,29 +8,30 @@ package chapter1_3;
  * @CreateDate: 2018/1/30/030 16:25
  * @UpdateDate: 2018/1/30/030 16:25
  */
-public class Ex48_doubleStack<Item> {
+class Ex48_doubleStack<Item> {
 
-    private Ex33_deque<Item> doubleStack = new Ex33_deque();
+    @SuppressWarnings("unchecked")
+    private final Ex33_deque<Item> doubleStack = new Ex33_deque();
     private int sizeOne = 0;
     private int sizeTwo = 0;
 
-    public void pushOne(Item item){
+    void pushOne(Item item){
         doubleStack.pushLeft(item);
         sizeOne++;
     }
 
-    public void pushTwo(Item item){
+    void pushTwo(Item item){
         doubleStack.pushRight(item);
         sizeTwo++;
     }
 
-    public Item popOne(){
+    Item popOne(){
         if (sizeOne == 0) throw new IndexOutOfBoundsException();
         sizeOne--;
         return doubleStack.popLeft();
     }
 
-    public Item popTwo(){
+    Item popTwo(){
         if (sizeTwo == 0) throw new IndexOutOfBoundsException();
         sizeTwo--;
         return doubleStack.popRight();
@@ -44,6 +45,7 @@ public class Ex48_doubleStack<Item> {
         return sizeTwo;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Ex48_doubleStack<Integer> doubleStack = new Ex48_doubleStack();
         doubleStack.pushOne(1);

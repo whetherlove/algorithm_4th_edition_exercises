@@ -1,7 +1,5 @@
 package chapter2_1;
 
-import java.util.Arrays;
-
 /**
  * @author Jacob Zhang
  * @ProjectName: algorithm_4th_edition_exercises
@@ -9,13 +7,13 @@ import java.util.Arrays;
  * @Description:
  * @date 23/02/2018 3:23 PM
  */
-public class ShellSort {
+class ShellSort {
 
     int times = 0;
     //希尔排序 不需要额外内存空间，适用于中等大小数组
     //在无系统排序函数可用时，可优先考虑希尔排序，再考虑快排
     //从小到大排序 相隔h的元素比较 h逐步减小至1
-    public static void sort(double[] a){
+    private static void sort(double[] a){
         //time为总比较次数，返回值为平均比较次数，用于习题12
         int h = 1;
         while (h < a.length/3)

@@ -13,13 +13,14 @@ import java.time.LocalDate;
  * @CreateDate: 2018/1/27/027 15:32
  * @UpdateDate: 2018/1/27/027 15:32
  */
+@SuppressWarnings("SameParameterValue")
 public class Ex11_smartDate {
 
     private final int year;
     private final int month;
     private final int day;
 
-    Ex11_smartDate(int y, int m, int d) throws InvalidDateException {
+    private Ex11_smartDate(int y, int m, int d) throws InvalidDateException {
 
         if (m > 12 || m < 1 || d > 31 || d < 1)
             throw new InvalidDateException();
@@ -36,7 +37,7 @@ public class Ex11_smartDate {
         day = d;
     }
 
-    Ex11_smartDate(String s) throws InvalidDateException {
+    private Ex11_smartDate(String s) throws InvalidDateException {
 
         String data[] = s.split("/");
         int m = Integer.parseInt(data[0]);
@@ -58,7 +59,7 @@ public class Ex11_smartDate {
         day = d;
     }
 
-    public boolean isLeapYear(){
+    private boolean isLeapYear(){
         if (this.year % 400 == 0)
             return true;
         else if (this.year % 100 !=0 && this.year % 4 == 0)
@@ -66,7 +67,7 @@ public class Ex11_smartDate {
         return false;
     }
     //Ex12 Zeller formula
-    public String dayOfTheWeek() {
+    private String dayOfTheWeek() {
 
         int month = this.month;
         int year = this.year;
@@ -86,7 +87,7 @@ public class Ex11_smartDate {
 
 
     private class InvalidDateException extends Throwable {
-        public InvalidDateException() {
+        InvalidDateException() {
         }
     }
     //Exercise 1.3.16

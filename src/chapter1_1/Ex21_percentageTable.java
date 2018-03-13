@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @CreateDate: 2018/1/23/023 17:34
  * @UpdateDate: 2018/1/23/023 17:34
  */
-public class Ex21_percentageTable {
+class Ex21_percentageTable {
 
     public static void main(String[] args) {
 

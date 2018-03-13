@@ -7,10 +7,10 @@ package chapter2_1;
  * @Description:
  * @date 24/02/2018 2:24 PM
  */
-public class Ex18_worstShell {
+class Ex18_worstShell {
 
     //返回值为总比较次数统计
-    public static int sort(int[] a){
+    private static int sort(int[] a){
         int time = 0;
         int h = 1;
         while (h < a.length/3)

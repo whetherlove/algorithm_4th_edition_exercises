@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/23/023 16:41
  * @UpdateDate: 2018/1/23/023 16:41
  */
-public class Ex18_mystery {
+class Ex18_mystery {
 
     public static void main(String[] args) {
         System.out.println(mystery(2,25));
@@ -17,12 +17,12 @@ public class Ex18_mystery {
         System.out.println(mystery2(3,11));
     }
 
-    public static int mystery(int a, int b){
+    private static int mystery(int a, int b){
         if (b == 0) return 0;
         if (b % 2 == 0) return mystery(a+a,b/2);
         return mystery(a+a,b/2) + a;
     }
-    public static int mystery2(int a, int b){
+    private static int mystery2(int a, int b){
         if (b == 0) return 1;
         if (b % 2 == 0) return mystery(a*a,b/2);
         return mystery(a*a,b/2) * a;

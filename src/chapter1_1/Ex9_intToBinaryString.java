@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.StdOut;
  * @CreateDate: 2018/1/23/023 14:52
  * @UpdateDate: 2018/1/23/023 14:52
  */
-public class Ex9_intToBinaryString {
+class Ex9_intToBinaryString {
 
     public static void main(String[] args) {
 
@@ -19,9 +19,9 @@ public class Ex9_intToBinaryString {
 
         StdOut.println(Integer.toBinaryString(n));
 
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for (int i=n;i>0;i/=2)
-            s = (i % 2) + s;
+            s.insert(0, (i % 2));
 
         System.out.println(s);
     }

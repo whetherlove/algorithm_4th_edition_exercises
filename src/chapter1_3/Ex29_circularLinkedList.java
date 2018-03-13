@@ -15,6 +15,7 @@ public class Ex29_circularLinkedList<Item> implements Iterable<Item>{
     private Node last;
     private int size = 0;
 
+    @SuppressWarnings("unchecked")
     @Override
     public Iterator iterator() {
         return new queueItr();
@@ -36,7 +37,7 @@ public class Ex29_circularLinkedList<Item> implements Iterable<Item>{
     }
 
     private class Node{
-        Item item;
+        final Item item;
         Node next;
         Node(Item i){
             item = i;
@@ -68,7 +69,7 @@ public class Ex29_circularLinkedList<Item> implements Iterable<Item>{
         return item;
     }
 
-    public boolean isEmpty(){
+    private boolean isEmpty(){
         return size == 0;
     }
 

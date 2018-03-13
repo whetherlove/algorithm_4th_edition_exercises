@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.StdOut;
  * @CreateDate: 2018/1/31/031 14:59
  * @UpdateDate: 2018/1/31/031 14:59
  */
-public class ThreeSum {
+class ThreeSum {
 
     public static int count(int[] a){
         int N = a.length;

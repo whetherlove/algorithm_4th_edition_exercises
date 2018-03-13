@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/24/024 16:15
  * @UpdateDate: 2018/1/24/024 16:15
  */
-public class Ex33_matrix {
+class Ex33_matrix {
 
     /**
      *此代码来自https://github.com/jimmysuncpt/Algorithms/blob/master/src/com/jimmysun/algorithms/chapter1_1/Matrix.java

@@ -12,7 +12,7 @@ import java.util.Arrays;
  * @CreateDate: 2018/1/27/027 11:46
  * @UpdateDate: 2018/1/27/027 11:46
  */
-public class Ex3_instanceOfInterval2D {
+class Ex3_instanceOfInterval2D {
 
     public static void main(String[] args) {
 
@@ -47,7 +47,7 @@ public class Ex3_instanceOfInterval2D {
         System.out.println("contains pairs: " + contains);
 
     }
-    public static Interval2D generator(double min, double max){
+    private static Interval2D generator(double min, double max){
         double width = StdRandom.uniform(min,max);
         double height = StdRandom.uniform(min,max);
         double posX = StdRandom.uniform(0,1-max);
@@ -61,7 +61,7 @@ public class Ex3_instanceOfInterval2D {
     //由于Intervals2D中坐标信息均为private,
     //通过parse其toString方法得到对应点
     //此处统一返回false;
-    public static boolean contains(Interval2D a, Interval2D b){
+    private static boolean contains(Interval2D a, Interval2D b){
         return false;
     }
 }

@@ -2,8 +2,6 @@ package chapter1_4;
 
 import edu.princeton.cs.algs4.StdRandom;
 
-import java.util.ArrayList;
-
 /**
  * @author Jacob Zhang
  * @ProjectName: algorithm_4th_edition_exercises
@@ -11,7 +9,8 @@ import java.util.ArrayList;
  * @Description:
  * @date 6/02/2018 4:05 PM
  */
-public class Ex45_couponProblem {
+@SuppressWarnings("InfiniteLoopStatement")
+class Ex45_couponProblem {
 
     public static void main(String[] args) {
         //Hn指的是调和级数 Harmonic series  1, 1/2, 1/3 ... 1/n
@@ -32,14 +31,14 @@ public class Ex45_couponProblem {
         }
     }
 
-    public static boolean allTrue(boolean[] a){
+    private static boolean allTrue(boolean[] a){
         for (boolean b : a)
             if (!b)
                 return false;
         return true;
     }
 
-    public static double HN(int N){
+    private static double HN(int N){
         double sum = 0;
         for (double i=1;i<=N;i++)
             sum += 1 / i;

@@ -8,12 +8,12 @@ package chapter1_3;
  * @CreateDate: 2018/1/30/030 14:47
  * @UpdateDate: 2018/1/30/030 14:47
  */
-public abstract class NodeList<Item> {
+abstract class NodeList<Item> {
 
      Node first;
 
      class Node{
-         Item item;
+         final Item item;
          Node next;
          Node(Item i){
              item = i;
@@ -27,12 +27,12 @@ public abstract class NodeList<Item> {
     @Override
     public String toString() {
         if (first == null) return "";
-        String s = "";
+        StringBuilder s = new StringBuilder();
         Node current = first;
         do {
-            s += current.item.toString();
+            s.append(current.item.toString());
             current = current.next;
         }while (current != null);
-        return s;
+        return s.toString();
     }
 }

@@ -1,9 +1,6 @@
 package chapter1_1;
 
 import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdRandom;
-
-import java.util.Arrays;
 
 /**
  * @ProjectName: algorithm_4th_edition_exercises
@@ -13,7 +10,7 @@ import java.util.Arrays;
  * @CreateDate: 2018/1/24/024 19:27
  * @UpdateDate: 2018/1/24/024 19:27
  */
-public class Ex39_matchByBinarySearch {
+class Ex39_matchByBinarySearch {
 
     public static void main(String[] args) {
 
@@ -41,13 +38,13 @@ public class Ex39_matchByBinarySearch {
     }
 
     //array with elements from 100000 to 999999
-    public static int[] initArray(int N){
+    private static int[] initArray(int N){
         int[] a = new int[N];
         for (int i=0;i<N;i++)
             a[i] = (int)(Math.random()*99999 + 100000);
         return a;
     }
-    public static int findCommon(int N){
+    private static int findCommon(int N){
         int[] a = initArray(N);
         int[] b = initArray(N);
         int count = 0;

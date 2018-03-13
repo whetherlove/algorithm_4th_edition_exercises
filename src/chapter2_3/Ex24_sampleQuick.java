@@ -16,7 +16,8 @@ import static chapter2_2.Merge.less;
  * @Description:
  * @date 1/03/2018 10:48 AM
  */
-public class Ex24_sampleQuick {
+@SuppressWarnings("Duplicates")
+class Ex24_sampleQuick {
 
     /*
     此题题意不明，暂放
@@ -56,24 +57,24 @@ public class Ex24_sampleQuick {
     5.perform the splits in the d directions of the hypercube;
     6.each processor quicksorts its sublist.
      */
-    public static ArrayList<Comparable> sampling(Comparable[] a){
+    @SuppressWarnings("unchecked")
+    private static ArrayList<Comparable> sampling(Comparable[] a){
         ArrayList<Comparable> samples = new ArrayList<>();
         //k值无法确定 此题暂放
         int k = 1;
-        for (int i = 0; i < k; i++)
-            samples.add(a[i]) ;
+        samples.addAll(Arrays.asList(a).subList(0, k));
         Collections.sort(samples);
         System.out.println(samples);
         return samples;
     }
 
-    public static void sort(Comparable[] a) {
+    private static void sort(Comparable[] a) {
         StdRandom.shuffle(a); // 消除对输入的依赖
         ArrayList<Comparable> samples = sampling(a);
         sort(a, samples, 0, a.length - 1);
     }
 
-    public static void sort(Comparable[] a, ArrayList<Comparable> samples, int lo, int hi) {
+    private static void sort(Comparable[] a, ArrayList<Comparable> samples, int lo, int hi) {
         System.out.println("lo:" + lo + " hi:" + hi);
         if (hi <= lo)
             return;
@@ -90,7 +91,7 @@ public class Ex24_sampleQuick {
         sort(a, samplesHi,j + 1, hi);
     }
 
-    public static int partition(Comparable[] a, ArrayList<Comparable> samples, int lo, int hi) {
+    private static int partition(Comparable[] a, ArrayList<Comparable> samples, int lo, int hi) {
         int i = lo, j = hi + 1;
         Comparable v = samples.get(samples.size()/2);
         int vPos = lo;

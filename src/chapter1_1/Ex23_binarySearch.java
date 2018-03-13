@@ -3,7 +3,6 @@ package chapter1_1;
 import edu.princeton.cs.algs4.StdIn;
 
 import java.util.Arrays;
-import java.util.stream.Stream;
 
 /**
  * @ProjectName: algorithm_4th_edition_exercises
@@ -13,7 +12,8 @@ import java.util.stream.Stream;
  * @CreateDate: 2018/1/23/023 18:54
  * @UpdateDate: 2018/1/23/023 18:54
  */
-public class Ex23_binarySearch {
+@SuppressWarnings("Duplicates")
+class Ex23_binarySearch {
     public static void main(String[] args) {
         
         System.out.println("Enter the filter parameter(+/-):");
@@ -35,10 +35,10 @@ public class Ex23_binarySearch {
         }
     }
 
-    public static int rank(int key, int[] a){
+    private static int rank(int key, int[] a){
         return rank(key,a,0,a.length-1);
     }
-    public static int rank(int key, int[] a, int lo, int hi){
+    private static int rank(int key, int[] a, int lo, int hi){
         System.out.println("lo="+lo+" hi="+hi);
         if (lo > hi) return -1;
         int mid = lo + (hi - lo) / 2;

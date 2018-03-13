@@ -10,28 +10,27 @@ import edu.princeton.cs.algs4.Stack;
  * @CreateDate: 2018/1/28/028 14:32
  * @UpdateDate: 2018/1/28/028 14:32
  */
-public class Ex10_infixTopPostfix {
+class Ex10_infixTopPostfix {
 
     public static void main(String[] args) {
 
         String s = "( ( 1 + 2 ) * ( ( 3 - 4 ) * ( 5 - 6 ) ) )";
         System.out.println(infixTopPostfix(s));
     }
-    public static String infixTopPostfix(String s){
-        String postfix = "";
+    private static String infixTopPostfix(String s){
+        StringBuilder postfix = new StringBuilder();
         String[] elems = s.split(" ");
         Stack<String> stack = new Stack<>();
         String availableOp = "+-*/";
 
-        for (int i=0;i<elems.length;i++){
-            String e = elems[i];
-            if (availableOp.indexOf(e) > -1)
+        for (String e : elems) {
+            if (availableOp.contains(e))
                 stack.push(e);
             else if (e.equals(")"))
-                postfix += stack.pop() + ")";
+                postfix.append(stack.pop()).append(")");
             else
-                postfix += e;
+                postfix.append(e);
         }
-        return postfix;
+        return postfix.toString();
     }
 }

@@ -9,9 +9,9 @@ import java.util.Arrays;
  * @Description:
  * @date 24/02/2018 4:17 PM
  */
-public class Ex24_insertionWithSentry {
+class Ex24_insertionWithSentry {
 
-    public static void sort(int[] a){
+    private static void sort(int[] a){
         //先找最小值
         int min = a[0];
         int minPos = 0;

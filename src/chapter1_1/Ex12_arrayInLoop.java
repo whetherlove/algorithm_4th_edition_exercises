@@ -8,7 +8,7 @@ package chapter1_1;
  * @CreateDate: 2018/1/23/023 15:36
  * @UpdateDate: 2018/1/23/023 15:36
  */
-public class Ex12_arrayInLoop {
+class Ex12_arrayInLoop {
 
     public static void main(String[] args) {
 

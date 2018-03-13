@@ -1,7 +1,6 @@
 package chapter1_4;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * @ProjectName: algorithm_4th_edition_exercises
@@ -11,7 +10,7 @@ import java.util.Comparator;
  * @CreateDate: 2018/2/2/002 16:09
  * @UpdateDate: 2018/2/2/002 16:09
  */
-public class Ex16_closestPair {
+class Ex16_closestPair {
 
     public static void main(String[] args) {
 

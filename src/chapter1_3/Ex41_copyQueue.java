@@ -10,10 +10,10 @@ import java.util.NoSuchElementException;
  * @CreateDate: 2018/1/30/030 14:50
  * @UpdateDate: 2018/1/30/030 14:50
  */
-public class Ex41_copyQueue<Item> extends NodeList<Item>{
+class Ex41_copyQueue<Item> extends NodeList<Item>{
 
-    Ex41_copyQueue(){}
-    Ex41_copyQueue(Ex41_copyQueue<Item> queue){
+    private Ex41_copyQueue(){}
+    private Ex41_copyQueue(Ex41_copyQueue<Item> queue){
         if (queue.first == null) return;
         this.first = new Node(queue.first.item);
         Node current = this.first;
@@ -25,7 +25,7 @@ public class Ex41_copyQueue<Item> extends NodeList<Item>{
         }
     }
 
-    public void enqueue(Item item){
+    void enqueue(Item item){
         if (first == null)
             first = new Node(item);
         else {
@@ -36,22 +36,22 @@ public class Ex41_copyQueue<Item> extends NodeList<Item>{
         }
     }
 
-    public Item dequeue(){
+    void dequeue(){
         if (first == null) throw new NoSuchElementException();
         if (first.next == null){
             Item item = first.item;
             first = null;
-            return item;
+            return;
         }
         Item item = first.item;
         first = first.next;
-        return item;
     }
 
     //Ex47
-    public Ex41_copyQueue catenation(Ex41_copyQueue q){
-        if (this.first == null) return q;
-        if (q.first == null) return this;
+    @SuppressWarnings("unchecked")
+    void catenation(Ex41_copyQueue q){
+        if (this.first == null) return;
+        if (q.first == null) return;
         if (this.first.next == null){
             this.first.next = q.first;
         }
@@ -61,9 +61,9 @@ public class Ex41_copyQueue<Item> extends NodeList<Item>{
                 current = current.next;
             current.next = q.first;
         }
-        return this;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         //test
         Ex41_copyQueue<Integer> queue = new Ex41_copyQueue();

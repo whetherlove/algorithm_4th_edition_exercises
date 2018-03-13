@@ -10,10 +10,10 @@ import java.util.NoSuchElementException;
  * @CreateDate: 2018/1/30/030 15:08
  * @UpdateDate: 2018/1/30/030 15:08
  */
-public class Ex42_copyStack<Item> extends NodeList<Item>{
+class Ex42_copyStack<Item> extends NodeList<Item>{
 
-    Ex42_copyStack(){}
-    Ex42_copyStack(Ex42_copyStack<Item> stack){
+    private Ex42_copyStack(){}
+    private Ex42_copyStack(Ex42_copyStack<Item> stack){
         if (stack.first == null) return;
         this.first = new Node(stack.first.item);
         Node current = this.first;
@@ -25,7 +25,7 @@ public class Ex42_copyStack<Item> extends NodeList<Item>{
         }
     }
 
-    public void push(Item item){
+    void push(Item item){
         if (first == null)
             first = new Node(item);
         else {
@@ -35,15 +35,15 @@ public class Ex42_copyStack<Item> extends NodeList<Item>{
         }
     }
 
-    public Item pop(){
+    void pop(){
         if (first == null) throw new NoSuchElementException();
         Item item = first.item;
         if (first.next == null)
             first = null;
         first = first.next;
-        return item;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
 
         Ex42_copyStack<Integer> stack = new Ex42_copyStack();

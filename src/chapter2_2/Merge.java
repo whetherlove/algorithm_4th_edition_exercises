@@ -17,13 +17,13 @@ public class Merge {
     //Ex19 用于统计数组中的倒置数量
     private static int reversals = 0;
 
-    public static void sort(Comparable[] a){
+    private static void sort(Comparable[] a){
         aux = new Comparable[a.length];
         sort(a,0,a.length-1);
         times += a.length;
     }
 
-    public static void sort(Comparable[] a, int lo, int hi){
+    private static void sort(Comparable[] a, int lo, int hi){
         if (hi <= lo) return;
         int mid = lo + (hi-lo) / 2;
         sort(a,lo,mid);
@@ -57,10 +57,12 @@ public class Merge {
     }
 
 
+    @SuppressWarnings("unchecked")
     public static boolean less(Comparable aux, Comparable aux1) {
         return aux.compareTo(aux1) < 0;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Comparable<String>[] a = new Comparable[]{"A", "E", "C", "B", "F"};
         sort(a);

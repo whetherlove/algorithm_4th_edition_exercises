@@ -1,6 +1,5 @@
 package chapter1_3;
 
-import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Stack;
 
 import java.util.Iterator;
@@ -14,18 +13,19 @@ import java.util.NoSuchElementException;
  * @CreateDate: 2018/1/28/028 16:21
  * @UpdateDate: 2018/1/28/028 16:21
  */
-public class LinkedList<Item> implements Iterable<Item>{
+@SuppressWarnings({"unchecked", "SameParameterValue"})
+class LinkedList<Item> implements Iterable<Object> {
 
     private Node first;
     private int N = 0;
 
-    LinkedList(Node n){
+    private LinkedList(Node n){
         first = n;
         N = 1;
     }
 
     @Override
-    public Iterator<Item> iterator(){
+    public Iterator<Object> iterator(){
         return new ListItr();
     }
 
@@ -35,10 +35,10 @@ public class LinkedList<Item> implements Iterable<Item>{
 
         @Override
         public boolean hasNext() {
-            if (current == null) return false;
-            return current.next != null;
+            return current != null && current.next != null;
         }
 
+        @SuppressWarnings("unchecked")
         @Override
         public Item next() {
             if (!hasNext())
@@ -49,7 +49,7 @@ public class LinkedList<Item> implements Iterable<Item>{
     }
 
     private static class Node<Item>{
-        Item item;
+        final Item item;
         Node next;
         Node(Item i){
             item = i;
@@ -60,14 +60,14 @@ public class LinkedList<Item> implements Iterable<Item>{
         }
     }
 
-    public void deleteFirst(){
+    void deleteFirst(){
         if (N == 0) throw new NoSuchElementException();
         if (N == 1) first = null;
         first = first.next;
         N--;
     }
     //Ex 1.3.19
-    public void deleteLast(){
+    void deleteLast(){
         if (N == 0) throw new NoSuchElementException();
         if (N == 1) first = null;
         if (N == 2){
@@ -83,7 +83,7 @@ public class LinkedList<Item> implements Iterable<Item>{
         N--;
     }
     //Ex 1.3.20
-    public void delete(int k){
+    void delete(int k){
         if (k < 0 || k > N)
             throw new NoSuchElementException();
         if (k == N)
@@ -100,16 +100,15 @@ public class LinkedList<Item> implements Iterable<Item>{
     }
 
     //Ex 1.3.21
-    public static boolean find(LinkedList l , String key){
-        Iterator it = l.iterator();
-        while (it.hasNext()){
-            if (it.next().equals(key))
+    private static boolean find(LinkedList l, String key){
+        for (Object aL : l) {
+            if (aL.equals(key))
                 return true;
         }
         return false;
     }
     //Ex1.3.24
-    public void removeAfter(Node n){
+    void removeAfter(Node n){
         if (n == null || n.next == null)
             throw new NoSuchElementException();
         Node temp = n.next;
@@ -118,7 +117,7 @@ public class LinkedList<Item> implements Iterable<Item>{
         N--;
     }
     //Ex1.3.25
-    public void insertAfter(Node t, Node n){
+    void insertAfter(Node t, Node n){
         n.next = null;
         if (t == null || n == null)
             throw new NoSuchElementException("Cannot find Node t");
@@ -132,7 +131,7 @@ public class LinkedList<Item> implements Iterable<Item>{
         N++;
     }
     //Ex 1.3.26
-    public static void remove(LinkedList l , String key){
+    private static void remove(LinkedList l, String key){
         if (l.N == 0) return;
         while (l.first.item.equals(key)){
             if (l.N == 1)
@@ -158,7 +157,8 @@ public class LinkedList<Item> implements Iterable<Item>{
 
     }
     //Ex 1.3.27
-    public static int max(Node<Integer> first){
+    @SuppressWarnings("unchecked")
+    private static int max(Node<Integer> first){
         int max = first.item;
         while (first.next != null){
             first = first.next;
@@ -168,12 +168,13 @@ public class LinkedList<Item> implements Iterable<Item>{
         return max;
     }
     //Ex 1.3.28
-    public static int maxWithRecursion(Node<Integer> first){
+    @SuppressWarnings("unchecked")
+    private static int maxWithRecursion(Node<Integer> first){
         if (first.next == null) return first.item;
         return Math.max(first.item,maxWithRecursion(first.next));
     }
     //Ex 1.3.30
-    public static Node reverse(Node first){
+    private static Node reverse(Node first){
         if (first.next == null) return first;
         Stack<Node> stack = new Stack<>();
         while (first.next != null){
@@ -192,14 +193,15 @@ public class LinkedList<Item> implements Iterable<Item>{
     public String toString(){
         if (first == null) return null;
         Node current = first;
-        String string = "";
+        StringBuilder string = new StringBuilder();
         while (current != null){
-            string += current.item;
+            string.append(current.item);
             current = current.next;
         }
-        return string;
+        return string.toString();
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         //test constructor
         Node first = new Node("1");

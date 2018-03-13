@@ -1,6 +1,5 @@
 package chapter2_4;
 
-import javax.swing.*;
 import java.util.Arrays;
 
 /**
@@ -10,7 +9,8 @@ import java.util.Arrays;
  * @Description:
  * @date 6/03/2018 4:42 PM
  */
-public class MaxPQ<Item extends Comparable<Item>> {
+@SuppressWarnings("SameParameterValue")
+class MaxPQ<Item extends Comparable<Item>> {
 
     private Item[] pq; // 基于堆的完全二叉树
 
@@ -18,15 +18,18 @@ public class MaxPQ<Item extends Comparable<Item>> {
 
     private Item min;
 
+    @SuppressWarnings("unchecked")
     public MaxPQ() {
         pq = (Item[]) new Comparable[1];
     }
 
-    public MaxPQ(int max) {
+    @SuppressWarnings("unchecked")
+    private MaxPQ(int max) {
         pq = (Item[]) new Comparable[max + 1];
     }
 
-    public MaxPQ(Item[] a) {
+    @SuppressWarnings("unchecked")
+    private MaxPQ(Item[] a) {
         N = a.length;
         pq = (Item[]) new Comparable[N+1];
         for (int i = 0; i < N; i++) {
@@ -46,7 +49,7 @@ public class MaxPQ<Item extends Comparable<Item>> {
         return N;
     }
 
-    public void insert(Item v) {
+    void insert(Item v) {
         if (min == null || v.compareTo(min) < 0)
             min = v;
         if(N == pq.length - 1)
@@ -55,10 +58,10 @@ public class MaxPQ<Item extends Comparable<Item>> {
         swim(N);
     }
     //Ex22 动态调整数组大小
+    @SuppressWarnings("unchecked")
     private void resize(int max){
         Item[] temp = (Item[]) new Comparable[max];
-        for (int i=0;i<N;i++)
-            temp[i] = pq[i];
+        System.arraycopy(pq, 0, temp, 0, N);
         pq = temp;
     }
 
@@ -66,7 +69,7 @@ public class MaxPQ<Item extends Comparable<Item>> {
         return pq[1];
     }
 
-    public Item delMax() {
+    Item delMax() {
         Item max = pq[1];
         exch(1, N--);
         pq[N + 1] = null;
@@ -133,10 +136,11 @@ public class MaxPQ<Item extends Comparable<Item>> {
     }
 
     //Ex27 找出最小元素 要求所需时间与空间均为常数
-    public Item min(){
+    Item min(){
         return min;
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         MaxPQ<Integer> pq = new MaxPQ<>(10);
         pq.insert(2);

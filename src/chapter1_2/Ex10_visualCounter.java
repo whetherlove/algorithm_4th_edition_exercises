@@ -10,34 +10,35 @@ import edu.princeton.cs.algs4.StdDraw;
  * @CreateDate: 2018/1/27/027 15:11
  * @UpdateDate: 2018/1/27/027 15:11
  */
-public class Ex10_visualCounter {
+@SuppressWarnings("SameParameterValue")
+class Ex10_visualCounter {
 
     private final int N;
     private final int max;
     private int value;
     private int operatedTimes;
 
-    Ex10_visualCounter(int n, int max){
+    private Ex10_visualCounter(int n, int max){
         this.N = n;
         this.max = max;
         this.value = 0;
         this.operatedTimes = 0;
     }
-    public void increment(){
+    private void increment(){
         if (value<max && operatedTimes<N){
             value++;
             operatedTimes++;
         }
         draw();
     }
-    public void decrement(){
+    private void decrement(){
         if (this.value>-max && operatedTimes<N){
             this.value--;
             operatedTimes++;
         }
         draw();
     }
-    public void draw(){
+    private void draw(){
         StdDraw.clear();
         StdDraw.text(0.5,0.5,"counter:"+value);
     }

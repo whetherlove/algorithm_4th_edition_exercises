@@ -10,13 +10,13 @@ import java.util.Arrays;
  * @CreateDate: 2018/1/27/027 19:17
  * @UpdateDate: 2018/1/27/027 19:17
  */
-public class Ex18_accumulator {
+class Ex18_accumulator {
 
     private double m;
     private double s;
     private int N;
 
-    public void addDateValue(double x){
+    private void addDateValue(double x){
         N++;
         s = s + 1.0 * (N - 1) / N * (x - m) * (x -m );
         m = m + (x - m) / N;
@@ -26,11 +26,11 @@ public class Ex18_accumulator {
         return m;
     }
 
-    public double var(){
+    private double var(){
         return s / (N - 1);
     }
 
-    public double stddev(){
+    private double stddev(){
         return Math.sqrt(this.var());
     }
 

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @CreateDate: 2018/1/24/024 13:44
  * @UpdateDate: 2018/1/24/024 13:44
  */
-public class Ex31_randomLink {
+class Ex31_randomLink {
 
     public static void main(String[] args) {
         //init canvas
@@ -48,8 +48,8 @@ public class Ex31_randomLink {
 }
 
 class Point {
-    double x;
-    double y;
+    final double x;
+    final double y;
 
     Point(double x, double y) {
         this.x = x;

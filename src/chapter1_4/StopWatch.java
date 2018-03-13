@@ -8,7 +8,7 @@ package chapter1_4;
  * @CreateDate: 2018/1/31/031 15:36
  * @UpdateDate: 2018/1/31/031 15:36
  */
-public class StopWatch {
+class StopWatch {
 
     private final long start;
 

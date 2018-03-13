@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @CreateDate: 2018/1/30/030 14:33
  * @UpdateDate: 2018/1/30/030 14:33
  */
-public class Ex40_moveToFront {
+class Ex40_moveToFront {
 
     public static void main(String[] args) {
 

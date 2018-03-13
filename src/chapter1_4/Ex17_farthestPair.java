@@ -8,7 +8,7 @@ package chapter1_4;
  * @CreateDate: 2018/2/2/002 16:36
  * @UpdateDate: 2018/2/2/002 16:36
  */
-public class Ex17_farthestPair {
+class Ex17_farthestPair {
 
     public static void main(String[] args) {
 
@@ -17,11 +17,11 @@ public class Ex17_farthestPair {
         double min = Double.MAX_VALUE;
         double max = -Double.MAX_VALUE;
 
-        for (int i=0;i<a.length;i++){
-            if (a[i] > max)
-                max = a[i];
-            if (a[i] < min)
-                min = a[i];
+        for (double anA : a) {
+            if (anA > max)
+                max = anA;
+            if (anA < min)
+                min = anA;
         }
         System.out.println(min + " " + max);
     }

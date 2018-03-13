@@ -9,10 +9,10 @@ import java.util.Arrays;
  * @Description:
  * @date 6/02/2018 5:32 PM
  */
-public class WeightedQuickUnionUF {
+class WeightedQuickUnionUF {
 
-    private int[] id;
-    private int[] sz;
+    private final int[] id;
+    private final int[] sz;
     private int count;
     private int times;
 
@@ -23,7 +23,7 @@ public class WeightedQuickUnionUF {
     //来替代原数组
     //然后调用resize方法动态调整数组长度即可
 
-    public WeightedQuickUnionUF(int N){
+    private WeightedQuickUnionUF(int N){
         count = N;
         id = new int[N];
         sz = new int[N];
@@ -41,7 +41,7 @@ public class WeightedQuickUnionUF {
         return find(p) == find(q);
     }
     //Ex12 路径压缩的quick-union算法
-    public int find(int p){
+    private int find(int p){
         int root = p;
         while (root != id[root]) {
             root = id[root];
@@ -55,7 +55,7 @@ public class WeightedQuickUnionUF {
         return root;
     }
 
-    public void union(int p, int q){
+    private void union(int p, int q){
         int i = find(p);
         int j = find(q);
         if (i == j) return;
@@ -75,12 +75,12 @@ public class WeightedQuickUnionUF {
         int N = 10;
         WeightedQuickUnionUF uf = new WeightedQuickUnionUF(N);
         System.out.println(Arrays.toString(uf.id));
-        for (int i = 0; i < input.length; i++) {
+        for (int[] anInput : input) {
             //每次调用union，必调用2次find,若pRoot != qRoot, 则额外访问数组id1次,sz1次
             //每次调用find，访问数组次数为p到其根节点的深度
-            int p = input[i][0];
-            int q = input[i][1];
-            uf.union(p,q);
+            int p = anInput[0];
+            int q = anInput[1];
+            uf.union(p, q);
             System.out.print(Arrays.toString(uf.id));
             System.out.print("\t" + Arrays.toString(uf.sz));
             System.out.println("\t" + uf.times);

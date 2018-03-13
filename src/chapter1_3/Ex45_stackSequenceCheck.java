@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.Stack;
  * @CreateDate: 2018/1/30/030 15:41
  * @UpdateDate: 2018/1/30/030 15:41
  */
-public class Ex45_stackSequenceCheck {
+class Ex45_stackSequenceCheck {
 
     public static void main(String[] args) {
         //test
@@ -26,7 +26,7 @@ public class Ex45_stackSequenceCheck {
 
     }
     //判断给定序列是否会导致数组向下溢出，要求使用空间量与N无关
-    public static boolean isUnderflow(String op){
+    private static boolean isUnderflow(String op){
         int size = 0;
         int tail = 0;
         while (tail<op.length()){
@@ -38,17 +38,18 @@ public class Ex45_stackSequenceCheck {
         return false;
     }
     //判断s 是否能由 op 生成， 要求线性算法 O(n) = N
-    public static boolean check(String op, String s){
-        String result = "";
+    @SuppressWarnings("unchecked")
+    private static boolean check(String op, String s){
+        StringBuilder result = new StringBuilder();
         Stack stack = new Stack();
         for (char c :op.toCharArray()){
             if (c == '-'){
-                result += stack.pop();
+                result.append(stack.pop());
             }
             else
                 stack.push(c);
         }
-        return result.indexOf(s) > -1;
+        return result.toString().contains(s);
     }
     //Ex46 判断s 是否能由 op 生成，若s中包含题中所述三元组，则返回false
     //由于序列中数字的入栈顺序固定(0,1,2,...,N),若栈中存在这样的数组，

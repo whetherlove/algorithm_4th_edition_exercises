@@ -1,10 +1,8 @@
 package chapter1_2;
 
 import edu.princeton.cs.algs4.Interval1D;
-import edu.princeton.cs.algs4.StdIn;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * @ProjectName: algorithm_4th_edition_exercises
@@ -14,7 +12,7 @@ import java.util.Arrays;
  * @CreateDate: 2018/1/27/027 11:22
  * @UpdateDate: 2018/1/27/027 11:22
  */
-public class Ex2_instanceOfInterval1D {
+class Ex2_instanceOfInterval1D {
 
     public static void main(String[] args) {
 

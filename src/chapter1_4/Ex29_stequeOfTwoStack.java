@@ -9,20 +9,21 @@ import edu.princeton.cs.algs4.Stack;
  * @Description:
  * @date 5/02/2018 9:20 PM
  */
-public class Ex29_stequeOfTwoStack<Item> {
+@SuppressWarnings("SameParameterValue")
+class Ex29_stequeOfTwoStack<Item> {
 
-    private Stack<Item> stack1 = new Stack<>();
-    private Stack<Item> stack2 = new Stack<>();
+    private final Stack<Item> stack1 = new Stack<>();
+    private final Stack<Item> stack2 = new Stack<>();
 
-    public void push(Item item){
+    void push(Item item){
         stack1.push(item);
     }
 
-    public Item pop(){
+    Item pop(){
         return stack1.pop();
     }
 
-    public void enqueue(Item item){
+    void enqueue(Item item){
         while (!stack1.isEmpty())
             stack2.push(stack1.pop());
         stack2.push(item);
@@ -30,6 +31,7 @@ public class Ex29_stequeOfTwoStack<Item> {
             stack1.push(stack2.pop());
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         //test
         Ex29_stequeOfTwoStack<Integer> steque = new Ex29_stequeOfTwoStack();

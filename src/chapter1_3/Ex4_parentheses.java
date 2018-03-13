@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.StdIn;
  * @CreateDate: 2018/1/28/028 11:46
  * @UpdateDate: 2018/1/28/028 11:46
  */
-public class Ex4_parentheses {
+class Ex4_parentheses {
 
     public static void main(String[] args) {
 
@@ -19,7 +19,7 @@ public class Ex4_parentheses {
         System.out.println(isPaired(s));
     }
 
-    public static boolean isPaired(String s){
+    private static boolean isPaired(String s){
         Stack<Character> parentheses = new Stack<>();
         for (int i=0;i<s.length();i++){
             char current = s.charAt(i);

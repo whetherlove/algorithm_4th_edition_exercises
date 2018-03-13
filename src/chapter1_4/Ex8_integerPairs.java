@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @CreateDate: 2018/2/1/001 15:51
  * @UpdateDate: 2018/2/1/001 15:51
  */
-public class Ex8_integerPairs {
+class Ex8_integerPairs {
 
     public static void main(String[] args) {
 

@@ -2,8 +2,6 @@ package chapter2_2;
 
 import java.util.LinkedList;
 
-import static chapter2_2.Merge.less;
-
 /**
  * @author Jacob Zhang
  * @ProjectName: algorithm_4th_edition_exercises
@@ -11,11 +9,11 @@ import static chapter2_2.Merge.less;
  * @Description:
  * @date 25/02/2018 4:29 PM
  */
-public class Ex18_shuffleLinkedList {
+class Ex18_shuffleLinkedList {
 
     private static Comparable[] aux;
 
-    public static void shuffle(LinkedList a){
+    private static void shuffle(LinkedList a){
         int N = a.size();
         aux = new Comparable[N];
         for (int size = 1; size < N; size*=2)
@@ -23,7 +21,8 @@ public class Ex18_shuffleLinkedList {
                 shuffle(a,lo,lo+size-1,Math.min(lo+size+size-1,N-1));
     }
 
-    public static void shuffle(LinkedList a, int lo, int mid, int hi) {
+    @SuppressWarnings("unchecked")
+    private static void shuffle(LinkedList a, int lo, int mid, int hi) {
         int i = lo;
         int j = mid + 1;
 
@@ -43,6 +42,7 @@ public class Ex18_shuffleLinkedList {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
 
         LinkedList a = new LinkedList();

@@ -11,9 +11,9 @@ import static chapter2_2.Merge.less;
  * @Description:
  * @date 25/02/2018 2:38 PM
  */
-public class Ex16_naturalMerge {
+class Ex16_naturalMerge {
     //对于Ex17，将数组操作替换为LinkedList操作即可，a.get(i), a.set(i,k);
-    public static void sort(Comparable[] a){
+    private static void sort(Comparable[] a){
 
         int start1=0,end1=0,start2,end2;
         //找出第一个有序子数组
@@ -36,11 +36,10 @@ public class Ex16_naturalMerge {
         }
     }
 
-    public static void merge(Comparable[] a, int start1, int end1, int start2, int end2){
+    private static void merge(Comparable[] a, int start1, int end1, int start2, int end2){
         int pos1 = start1, pos2 = start2;
         Comparable[] aux = new Comparable[end2-start1+1];
-        for (int i=start1; i<=end2; i++)
-            aux[i] = a[i];
+        System.arraycopy(a, start1, aux, start1, end2 + 1 - start1);
         for (int pos=start1; pos<=end2; pos++){
             if (pos1 > end1)
                 a[pos] = aux[pos2++];

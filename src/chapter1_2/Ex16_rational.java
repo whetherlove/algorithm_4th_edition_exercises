@@ -1,7 +1,5 @@
 package chapter1_2;
 
-import chapter1_1.Ex24_commonDivisor;
-
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: chapter1_2
@@ -10,12 +8,12 @@ import chapter1_1.Ex24_commonDivisor;
  * @CreateDate: 2018/1/27/027 17:37
  * @UpdateDate: 2018/1/27/027 17:37
  */
-public class Ex16_rational {
+class Ex16_rational {
 
     final private long numertor;
     final private long denominator;
 
-    Ex16_rational(long n, long d){
+    private Ex16_rational(long n, long d){
 
         assert d !=0;
         assert n < Long.MAX_VALUE && n > Long.MIN_VALUE;
@@ -25,10 +23,10 @@ public class Ex16_rational {
         denominator = d;
     }
 
-    public Ex16_rational plus(Ex16_rational b){
+    private Ex16_rational plus(Ex16_rational b){
         long newDenominator = this.denominator*b.denominator;
         long newNumerator = this.numertor*b.denominator + this.denominator*b.numertor;
-        while (!isCoprime(newDenominator,newNumerator)){
+        while (isCoprime(newDenominator,newNumerator)){
             long commonDiviosor = commonDivisor(newDenominator,newNumerator);
             newDenominator /= commonDiviosor;
             newNumerator /= commonDiviosor;
@@ -36,10 +34,10 @@ public class Ex16_rational {
         return new Ex16_rational(newNumerator,newDenominator);
     }
 
-    public Ex16_rational minus(Ex16_rational b){
+    private Ex16_rational minus(Ex16_rational b){
         long newDenominator = this.denominator*b.denominator;
         long newNumerator = this.numertor*b.denominator - this.denominator*b.numertor;
-        while (!isCoprime(newDenominator,newNumerator)){
+        while (isCoprime(newDenominator,newNumerator)){
             long commonDiviosor = commonDivisor(newDenominator,newNumerator);
             newDenominator /= commonDiviosor;
             newNumerator /= commonDiviosor;
@@ -47,10 +45,10 @@ public class Ex16_rational {
         return new Ex16_rational(newNumerator,newDenominator);
     }
 
-    public Ex16_rational times(Ex16_rational b){
+    private Ex16_rational times(Ex16_rational b){
         long newDenominator = this.denominator*b.denominator;
         long newNumerator = this.numertor*b.numertor;
-        while (!isCoprime(newDenominator,newNumerator)){
+        while (isCoprime(newDenominator,newNumerator)){
             long commonDiviosor = commonDivisor(newDenominator,newNumerator);
             newDenominator /= commonDiviosor;
             newNumerator /= commonDiviosor;
@@ -58,10 +56,10 @@ public class Ex16_rational {
         return new Ex16_rational(newNumerator,newDenominator);
     }
 
-    public Ex16_rational divides(Ex16_rational b){
+    private Ex16_rational divides(Ex16_rational b){
         long newDenominator = this.denominator*b.numertor;
         long newNumerator = this.numertor*b.denominator;
-        while (!isCoprime(newDenominator,newNumerator)){
+        while (isCoprime(newDenominator,newNumerator)){
             long commonDiviosor = commonDivisor(newDenominator,newNumerator);
             newDenominator /= commonDiviosor;
             newNumerator /= commonDiviosor;
@@ -69,9 +67,9 @@ public class Ex16_rational {
         return new Ex16_rational(newNumerator,newDenominator);
     }
 
-    public boolean equals(Ex16_rational that){
+    private boolean equals(Ex16_rational that){
         Ex16_rational result = this.divides(that);
-        return result.denominator == 1l && result.numertor == 1l;
+        return result.denominator == 1L && result.numertor == 1L;
     }
 
     public String toString(){
@@ -79,7 +77,7 @@ public class Ex16_rational {
     }
 
     private boolean isCoprime(long newDenominator, long newNumerator) {
-        return commonDivisor(newDenominator,newNumerator) == 1l;
+        return commonDivisor(newDenominator,newNumerator) != 1L;
     }
 
     private long commonDivisor(long p, long q) {

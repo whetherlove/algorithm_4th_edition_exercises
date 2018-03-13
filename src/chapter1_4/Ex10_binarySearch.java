@@ -8,7 +8,8 @@ package chapter1_4;
  * @CreateDate: 2018/2/2/002 14:32
  * @UpdateDate: 2018/2/2/002 14:32
  */
-public class Ex10_binarySearch {
+@SuppressWarnings("SameParameterValue")
+class Ex10_binarySearch {
 
     public static void main(String[] args) {
         //test
@@ -16,10 +17,10 @@ public class Ex10_binarySearch {
         System.out.println(rank(3,a));
     }
 
-    public static int rank(int key, int[] a){
+    private static int rank(int key, int[] a){
         return rank(key,a,0,a.length-1);
     }
-    public static int rank(int key, int[] a, int lo, int hi){
+    private static int rank(int key, int[] a, int lo, int hi){
         if (lo > hi) return -1;
         int mid = lo + (hi - lo) / 2;
         if (key < a[mid]) return rank(key,a,lo,mid-1);
