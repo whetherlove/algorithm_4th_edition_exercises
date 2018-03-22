@@ -14,6 +14,7 @@ public class Merge {
     private static Comparable[] aux;
     //统计访问数组总次数，对于长度为N的数组，复制2N次，移动2N次，比较最多2N次
     private static int times = 0;
+
     //Ex19 用于统计数组中的倒置数量
     private static int reversals = 0;
 

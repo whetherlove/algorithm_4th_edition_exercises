@@ -1,3 +1,8 @@
+
+import java.io.*;
+import java.util.Arrays;
+
+
 /**
  * @ProjectName: algorithm_4th_edition_exercises
  * @Package: PACKAGE_NAME
@@ -9,7 +14,11 @@
 @SuppressWarnings("EmptyMethod")
 class test{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        int[][] a = {{1,2},{3,4}};
+        int[][] b = {{1,2},{3,4}};
+        System.out.println(Arrays.equals(a,b));
+        System.out.println(Arrays.deepEquals(a,b));
     }
 
 
