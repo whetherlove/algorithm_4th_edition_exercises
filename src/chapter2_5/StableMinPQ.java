@@ -1,10 +1,7 @@
 package chapter2_5;
 
-import edu.princeton.cs.algs4.Insertion;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
+
 
 /**
  * @author Jacob Zhang
@@ -51,6 +48,5 @@ public class StableMinPQ<Item extends Comparable<Item>> {
         System.out.println(pq.delMin());
         System.out.println(pq.delMin());
         System.out.println(pq.delMin());
-
     }
 }
